@@ -1,20 +1,23 @@
-export const select = {};
+export const select = {
+  templateOf: {
+    templateSongs: '#template-songs',// CODE ADDED
+  },
+};
 
 export const classNames = {};
 
 export const settings = {
   db: {
     url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
-    products: 'products',
-    orders: 'orders',
-    booking: 'bookings',
-    event: 'events',
-    dateStartParamKey: 'date_gte',
-    dateEndParamKey: 'date_lte',
-    notRepeatParam: 'repeat=false',
-    repeatParam: 'repeat_ne=false',
+    id: 'id',
+    title: 'title',
+    author: 'author',
+    songsFilename: 'filename',
+    songsCategories: 'categories',
+    songsRanking: 'ranking',
   },
 };
 
 export const templates = {
+  templateSongs: Handlebars.compile(document.querySelector(select.templateOf.templateSongs).innerHTML),
 };

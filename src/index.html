@@ -45,8 +45,62 @@
     </section>
   </div>
 
+  <script id="template-songs" type="text/x-handlebars-template">
+    <article class="songs"> <!-- product -->
+
+        <header class="songs__header">
+          <h3 class="songs__name no-spacing">{{ name }}</h3>
+        </header>
+        <div class="product__description"> <!-- audio -->
+          <div class="songs__audio">
+            <audio>
+                <source src="audio/example-1.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        </div>
+        <div class="songs__wrapper"> 
+         <!-- details -->
+          <p>Categories: {{{ songsCategories }}}</p>
+          <p>#{{{ ranking }}} in the ranking</p>
+        </div>
+    </article> 
+    
+    <div class="subscribe">
+      <div class="subscribe__image">
+        <img src="images/subscribe.jpg" alt="subscribe images">
+        <div class="subscribe__header">
+          <h3>Subscribe now</h3>
+        </div>
+        <div class="subscribe__button">
+          <a href="#subscribe">Join now</a>
+        </div>
+        <div class="subscribe--second-image">
+          <img src="images/artist.jpg" alt="second image">
+          <div class="subscribe--second-image__text">
+            <p>Dean</p>
+            <p>Hen<span>son</span></p>
+          </div>
+        </div>
+        <div class="subscribe__second-text">
+          <h4>New Album</h4>
+          <p>Available only for subscribers</p>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+  <footer>
+    <div class="container">
+      <p>All rights reserved</p>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/app.js" type="module"></script>
 </body>
 
