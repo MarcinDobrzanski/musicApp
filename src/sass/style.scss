@@ -1,5 +1,10 @@
-@import 'pages/normalize';
+// normalize default styles
+@import 'normalize';
 
-@import 'pages/typography';
-@import 'pages/layout';
-@import 'pages/global';
+// variables
+@import 'variables';
+
+// common styles
+@import 'layout';
+@import 'global';
+@import 'typography';
