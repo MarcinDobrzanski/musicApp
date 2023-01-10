@@ -9,6 +9,7 @@ export const classNames = {};
 export const settings = {
   db: {
     url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
+    songs: 'songs',
     id: 'id',
     title: 'title',
     author: 'author',
