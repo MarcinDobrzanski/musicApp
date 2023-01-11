@@ -1,6 +1,9 @@
 export const select = {
   templateOf: {
-    templateSongs: '#template-songs',// CODE ADDED
+    mainPage: '#template-main-page', 
+  },
+  containerOf: {
+    mainPage: '.mainPage-container',
   },
 };
 
@@ -20,5 +23,5 @@ export const settings = {
 };
 
 export const templates = {
-  templateSongs: Handlebars.compile(document.querySelector(select.templateOf.templateSongs).innerHTML),
+  mainPage: Handlebars.compile(document.querySelector(select.templateOf.mainPage).innerHTML),
 };

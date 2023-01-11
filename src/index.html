@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
   <meta charset="UTF-8">
@@ -31,11 +31,36 @@
         <a href="#search">Search</a>
         <a href="#discover">Discover</a>
       </div>
+    </div>
   </header>
 
   <div id="pages">
     <section id="home">
       <div class="mainPage-container container"></div>
+      <div class="mainPage--subscribe container">
+        <div class="subscribe">
+          <div class="subscribe__image">
+            <img src="images/subscribe.jpg" alt="subscribe images">
+            <div class="subscribe__header">
+              <h3>Subscribe now</h3>
+            </div>
+            <div class="subscribe__button">
+              <a href="#subscribe">Join now</a>
+            </div>
+            <div class="subscribe--second-image">
+              <img src="images/artist.jpg" alt="second image">
+              <div class="subscribe--second-image__text">
+                <p>Dean</p>
+                <p>Hen<span>son</span></p>
+              </div>
+            </div>
+            <div class="subscribe__second-text">
+              <h4>New Album</h4>
+              <p>Available only for subscribers</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="search">
       <div id="search-box" class="search-wrapper container"></div>
@@ -45,56 +70,45 @@
     </section>
   </div>
 
-  <script id="template-songs" type="text/x-handlebars-template">
-    <article class="songs"> <!-- product -->
+  <script id="template-main-page" type="text/x-handlebars-template">
+    <li class="song">
 
-        <header class="songs__header">
-          <h3 class="songs__name no-spacing">{{ name }}</h3>
-        </header>
-        <div class="product__description"> <!-- audio -->
-          <div class="songs__audio">
+      <!-- title and price -->
+      <div class="songs__header">
+        <h2 class="songs__name">{{ title }}</h2>
+      </div>
+
+      <!-- cover image -->
+        <figure>
+          <div class="song-item">
             <audio>
-                <source src="audio/example-1.mp3" type="audio/mpeg">
+                <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
             </audio>
         </div>
-        </div>
-        <div class="songs__wrapper"> 
-         <!-- details -->
-          <p>Categories: {{{ songsCategories }}}</p>
-          <p>#{{{ ranking }}} in the ranking</p>
-        </div>
-    </article> 
-    
-    <div class="subscribe">
-      <div class="subscribe__image">
-        <img src="images/subscribe.jpg" alt="subscribe images">
-        <div class="subscribe__header">
-          <h3>Subscribe now</h3>
-        </div>
-        <div class="subscribe__button">
-          <a href="#subscribe">Join now</a>
-        </div>
-        <div class="subscribe--second-image">
-          <img src="images/artist.jpg" alt="second image">
-          <div class="subscribe--second-image__text">
-            <p>Dean</p>
-            <p>Hen<span>son</span></p>
-          </div>
-        </div>
-        <div class="subscribe__second-text">
-          <h4>New Album</h4>
-          <p>Available only for subscribers</p>
+        </figure>
+      </a>
+
+      <!-- categories -->
+      <div class="songs__ranking">
+        <div class="songs__ranking__fill">
+          {{ ranking }}
         </div>
       </div>
-    </div>
+      <!-- ranking -->
+      <div class="songs__ranking">
+        <div class="songs__ranking__fill">
+          {{ ranking }}
+        </div>
+      </div>
+    </li>
   </script>
 
 
-  <footer>
+  <div class="footer">
     <div class="container">
       <p>All rights reserved</p>
     </div>
-  </footer>
+  </div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"

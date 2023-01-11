@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: $color-dark;
+  background: $color-light;
   font-family: $font-text;
   font-size: 14px;
   line-height: 1.7;
@@ -12,7 +12,6 @@ body {
   margin: 0 auto;
 
   .hero__image {
-
     img {
       width: 100vw;
     }
