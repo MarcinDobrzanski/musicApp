@@ -5,6 +5,9 @@ export const select = {
   containerOf: {
     mainPage: '.mainPage-container',
   },
+  player: {
+    player: '.player',
+  },
 };
 
 export const classNames = {};

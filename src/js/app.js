@@ -1,6 +1,5 @@
-import { settings } from './settings.js';
+import { select, settings } from './settings.js';
 import Home from './components/Home.js';
-import utils from './utils.js';
 
 const app = {
   initData: function () {
@@ -31,6 +30,18 @@ const app = {
       new Home(thisApp.data.songs[song]);
     }
 
+    thisApp.initPlayer();
+
+  },
+
+  initPlayer: function () {
+
+    GreenAudioPlayer.init({
+      selector: select.player.player,
+      stopOthersOnPlay: true
+    });
+
+
   },
 
   init: function () {
@@ -41,6 +52,7 @@ const app = {
 
     thisApp.initData();
   },
+
 };
 
 app.init();

@@ -71,36 +71,36 @@
   </div>
 
   <script id="template-main-page" type="text/x-handlebars-template">
-    <li class="song">
+    <div class="songs__wrapper">
+      <li class="songs__wrapper--song">
 
-      <!-- title and price -->
-      <div class="songs__header">
-        <h2 class="songs__name">{{ title }}</h2>
-      </div>
-
-      <!-- cover image -->
-        <figure>
-          <div class="song-item">
-            <audio>
-                <source src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
-            </audio>
+        <!-- title and price -->
+        <div class="songs__header">
+          <h2 class="songs__name">{{ title }}</h2>
         </div>
-        </figure>
-      </a>
-
-      <!-- categories -->
-      <div class="songs__ranking">
-        <div class="songs__ranking__fill">
-          {{ ranking }}
+  
+        <!-- cover image -->
+            <div class="player">
+              <audio src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+        
+        <div class="songs__text-wrraper">
+                  <!-- categories -->
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
+            <p>Category: {{ categories }}</p>
+          </div>
         </div>
-      </div>
-      <!-- ranking -->
-      <div class="songs__ranking">
-        <div class="songs__ranking__fill">
-          {{ ranking }}
+        <!-- ranking -->
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
+            <p>#{{ ranking }} in the ranking</p>
+          </div>
         </div>
-      </div>
-    </li>
+        </div>
+      </li>
+    </div>
   </script>
 
 
