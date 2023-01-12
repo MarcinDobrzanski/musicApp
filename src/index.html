@@ -21,8 +21,10 @@
       <div class="hero__image">
         <img src="images/background.jpg" alt="Main picture">
         <div class="hero--text">
-          <h1 class="hero--text__title">Mamma Mia!</h1>
-          <h2 class="hero--text__subtitle">the best homemade Italian food</h2>
+          <h1 class="hero--text__title">taste</h1>
+          <p class="hero--text__subtitle">engage</p>
+          <p class="hero--text__subtitle">in</p>
+          <p class="hero--text__subtitle">art</p>
         </div>
       </div>
 
@@ -37,30 +39,6 @@
   <div id="pages">
     <section id="home">
       <div class="mainPage-container container"></div>
-      <div class="mainPage--subscribe container">
-        <div class="subscribe">
-          <div class="subscribe__image">
-            <img src="images/subscribe.jpg" alt="subscribe images">
-            <div class="subscribe__header">
-              <h3>Subscribe now</h3>
-            </div>
-            <div class="subscribe__button">
-              <a href="#subscribe">Join now</a>
-            </div>
-            <div class="subscribe--second-image">
-              <img src="images/artist.jpg" alt="second image">
-              <div class="subscribe--second-image__text">
-                <p>Dean</p>
-                <p>Hen<span>son</span></p>
-              </div>
-            </div>
-            <div class="subscribe__second-text">
-              <h4>New Album</h4>
-              <p>Available only for subscribers</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
     <section id="search">
       <div id="search-box" class="search-wrapper container"></div>
@@ -81,58 +59,31 @@
   
         <!-- cover image -->
             <div class="player">
-              <audio src="songs/{{ filename }}" type="audio/mpeg">
+              <audio controls src="songs/{{ filename }}" type="audio/mpeg">
               </audio>
             </div>
         
         <div class="songs__text-wrraper">
                   <!-- categories -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
+          <div class="songs__ranking">
+            <div class="songs__ranking__fill">
             <p>Category: {{ categories }}</p>
+            </div>
           </div>
-        </div>
         <!-- ranking -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
+          <div class="songs__ranking">
+            <div class="songs__ranking__fill">
             <p>#{{ ranking }} in the ranking</p>
+            </div>
           </div>
-        </div>
         </div>
       </li>
     </div>
   </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <div class="songs__wrapper">
-      <li class="songs__wrapper--song">
-
-        <!-- title and price -->
-        <div class="songs__header">
-          <h2 class="songs__name">{{ title }}</h2>
-        </div>
-  
-        <!-- cover image -->
-            <div class="player">
-              <audio src="songs/{{ filename }}" type="audio/mpeg">
-              </audio>
-            </div>
-        
-        <div class="songs__text-wrraper">
-                  <!-- categories -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
-            <p>Category: {{ categories }}</p>
-          </div>
-        </div>
-        <!-- ranking -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
-            <p>#{{ ranking }} in the ranking</p>
-          </div>
-        </div>
-        </div>
-      </li>
+    <div class="search__wrapper">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptate! Dolorem ab sapiente repellat aperiam iusto expedita quasi eveniet doloremque.</div>
     </div>
   </script>
 

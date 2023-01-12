@@ -6,6 +6,7 @@ export const select = {
   containerOf: {
     mainPage: '.mainPage-container',
     pages: '#pages',
+    searchPage: '#search-box',
   },
   player: {
     player: '.player',
@@ -13,6 +14,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
+    navWrapper: '.main-nav',
   }
 };
 
@@ -40,5 +42,5 @@ export const settings = {
 
 export const templates = {
   mainPage: Handlebars.compile(document.querySelector(select.templateOf.mainPage).innerHTML),
-  seachPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
+  searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
 };

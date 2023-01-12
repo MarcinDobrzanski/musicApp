@@ -1,5 +1,6 @@
 import { select, settings, classNames } from './settings.js';
 import Home from './components/Home.js';
+import Search from './components/Search.js';
 
 const app = {
   initPages: function () {
@@ -76,16 +77,29 @@ const app = {
     for (let song in thisApp.data.songs) {
       new Home(thisApp.data.songs[song]);
     }
+  },
 
-    thisApp.initPlayer();
+  initSearch: function () {
+    const thisApp = this;
+
+    const searchContainer = document.querySelector(select.containerOf.searchPage);
+
+    thisApp.search = new Search(searchContainer);
 
   },
 
   initPlayer: function () {
 
-    GreenAudioPlayer.init({
-      selector: select.player.player,
-      stopOthersOnPlay: true
+    // GreenAudioPlayer.init({
+    //   selector: select.player.player,
+    //   stopOthersOnPlay: true
+    // });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      GreenAudioPlayer.init({
+        selector: '.player',
+        stopOthersOnPlay: true
+      });
     });
 
 
@@ -93,11 +107,14 @@ const app = {
 
   init: function () {
     const thisApp = this;
-    console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
 
     thisApp.initPages();
+
     thisApp.initData();
+
+    thisApp.initSearch();
+    thisApp.initPlayer();
+
   },
 
 };
