@@ -65,7 +65,7 @@
     <section id="search">
       <div id="search-box" class="search-wrapper container"></div>
     </section>
-    <section id="discover-box">
+    <section id="discover">
       <div class="discover-wrapper container"></div>
     </section>
   </div>
@@ -81,7 +81,40 @@
   
         <!-- cover image -->
             <div class="player">
-              <audio src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
+              <audio src="songs/{{ filename }}" type="audio/mpeg">
+              </audio>
+            </div>
+        
+        <div class="songs__text-wrraper">
+                  <!-- categories -->
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
+            <p>Category: {{ categories }}</p>
+          </div>
+        </div>
+        <!-- ranking -->
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
+            <p>#{{ ranking }} in the ranking</p>
+          </div>
+        </div>
+        </div>
+      </li>
+    </div>
+  </script>
+
+  <script id="template-search-page" type="text/x-handlebars-template">
+    <div class="songs__wrapper">
+      <li class="songs__wrapper--song">
+
+        <!-- title and price -->
+        <div class="songs__header">
+          <h2 class="songs__name">{{ title }}</h2>
+        </div>
+  
+        <!-- cover image -->
+            <div class="player">
+              <audio src="songs/{{ filename }}" type="audio/mpeg">
               </audio>
             </div>
         
