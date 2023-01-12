@@ -1,18 +1,24 @@
-.h1 {
+h1 {
   font-family: $font-header;
-  font-size: 26px;
+  font-size: 200px;
   font-weight: $font-semibold;
+  color: $color-light;
   text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
-.h2 {
+h2 {
   font-size: 14px;
   font-weight: $font-bold;
   text-transform: uppercase;
 }
 
-.h3 {
+h3 {
   font-size: 12px;
   font-weight: $font-bold;
   text-transform: uppercase;
+}
+
+li {
+  list-style-type: none;
 }

@@ -8,12 +8,38 @@ body {
   color: $color-dark;
 }
 
+section {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
 .container {
-  margin: 0 auto;
 
   .hero__image {
     img {
+      position: relative;
       width: 100vw;
+      height: 1297px;
+      object-fit: cover;
+    }
+
+    .hero--text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &__subtitle {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+        font-weight: $font-header;
+        color: $color-light;
+        text-transform: uppercase;
+        text-align: center;
+      }
     }
   }
 }

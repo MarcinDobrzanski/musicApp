@@ -5,6 +5,10 @@
 @import 'variables';
 
 // common styles
+@import 'typography';
 @import 'layout';
 @import 'global';
-@import 'typography';
+
+// pages
+
+@import './pages/home'

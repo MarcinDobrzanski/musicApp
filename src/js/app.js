@@ -3,6 +3,7 @@ import Home from './components/Home.js';
 import Search from './components/Search.js';
 
 const app = {
+  
   initPages: function () {
     const thisApp = this;
 
@@ -77,6 +78,8 @@ const app = {
     for (let song in thisApp.data.songs) {
       new Home(thisApp.data.songs[song]);
     }
+
+    thisApp.initPlayer();
   },
 
   initSearch: function () {
@@ -90,19 +93,10 @@ const app = {
 
   initPlayer: function () {
 
-    // GreenAudioPlayer.init({
-    //   selector: select.player.player,
-    //   stopOthersOnPlay: true
-    // });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      GreenAudioPlayer.init({
-        selector: '.player',
-        stopOthersOnPlay: true
-      });
+    GreenAudioPlayer.init({
+      selector: select.player.player,
+      stopOthersOnPlay: true
     });
-
-
   },
 
   init: function () {
@@ -113,7 +107,6 @@ const app = {
     thisApp.initData();
 
     thisApp.initSearch();
-    thisApp.initPlayer();
 
   },
 
