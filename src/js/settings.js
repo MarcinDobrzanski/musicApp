@@ -2,11 +2,13 @@ export const select = {
   templateOf: {
     mainPage: '#template-main-page', 
     searchPage: '#template-search-page', 
+    discoverPage: '#template-discover-page', 
   },
   containerOf: {
     mainPage: '.mainPage-container',
     pages: '#pages',
     searchPage: '#search-box',
+    discoverPage: '.discover-wrapper',
   },
   player: {
     player: '.player',
@@ -43,4 +45,5 @@ export const settings = {
 export const templates = {
   mainPage: Handlebars.compile(document.querySelector(select.templateOf.mainPage).innerHTML),
   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
+  discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
 };

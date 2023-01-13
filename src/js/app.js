@@ -1,6 +1,7 @@
 import { select, settings, classNames } from './settings.js';
 import Home from './components/Home.js';
 import Search from './components/Search.js';
+import Discover from './components/Discover.js';
 
 const app = {
 
@@ -91,6 +92,15 @@ const app = {
 
   },
 
+  initDiscover: function () {
+    const thisApp = this;
+
+    const discoverContainer = document.querySelector(select.containerOf.discoverPage);
+
+    thisApp.discover = new Discover(discoverContainer);
+
+  },
+
   initPlayer: function () {
 
     GreenAudioPlayer.init({
@@ -108,6 +118,7 @@ const app = {
     thisApp.initData();
 
     thisApp.initSearch();
+    thisApp.initDiscover();
 
   },
 
