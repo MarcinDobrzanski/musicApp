@@ -10,15 +10,29 @@ h1 {
 h2 {
   font-size: 14px;
   font-weight: $font-bold;
+  color: $color-light;
   text-transform: uppercase;
 }
 
 h3 {
   font-size: 12px;
   font-weight: $font-bold;
+  color: $color-light;
   text-transform: uppercase;
+}
+
+h4 {
+  color: $color-light;
+}
+
+p {
+  color: $color-light;
 }
 
 li {
   list-style-type: none;
+}
+
+a {
+  color: $color-light;
 }
