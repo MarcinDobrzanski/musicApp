@@ -1,10 +1,67 @@
+.mainPage-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 70px;
+
+  .songs__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .subscribe__image {
   position: relative;
-
+  justify-content: center;
   &--background {
     width: 100vw;
     max-height: 1020px;
     object-fit: cover;
+  }
+
+  .subscribe__header {
+    position: absolute;
+    top: -2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+      font-size: 5rem;
+    }
+  }
+
+  .subscribe__button {
+    position: absolute;
+    background-color: $color-main;
+    padding: 10px 40px;
+    border-radius: 5px;
+    font-size: 2rem;
+    top: 45%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .subscribe__second-text {
+    position: absolute;
+    font-weight: $font-black;
+    letter-spacing: 0.5rem;
+    text-align: right;
+    top: 75%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+
+    p:first-child  {
+      font-size: 2rem;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      width: 520px;
+      font-size: 1.5rem;
+      letter-spacing: 0.4rem;
+    }
   }
 }
 
@@ -14,8 +71,29 @@
     height: auto;
     object-fit: cover;
     position: absolute;
-    top: 35%;
+    top: 38%;
     left: 70%;
     transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    p {
+      position: absolute;
+      top: 35%;
+      left: 57%;
+      transform: translate(-50%, -50%);
+      font-size: 5rem;
+      font-weight: $font-black;
+      letter-spacing: .8rem;
+    }
+
+    p:first-child {
+      top: 25%;
+      left: 49%;
+    }
+
+    span {
+      color: $color-main;
+    }
   }
 }
