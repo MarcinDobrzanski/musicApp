@@ -3,7 +3,7 @@ import Home from './components/Home.js';
 import Search from './components/Search.js';
 
 const app = {
-  
+
   initPages: function () {
     const thisApp = this;
 
@@ -97,6 +97,7 @@ const app = {
       selector: select.player.player,
       stopOthersOnPlay: true
     });
+
   },
 
   init: function () {
