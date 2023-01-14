@@ -9,6 +9,7 @@ export const select = {
     pages: '#pages',
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
+    songsWrapper: '.songs__wrapper--song',
   },
   player: {
     player: '.player',

@@ -75,7 +75,7 @@
 
   <script id="template-main-page" type="text/x-handlebars-template">
     <div class="songs__wrapper">
-      <li class="songs__wrapper--song">
+      <div class="songs__wrapper--song">
 
         <div class="songs__header">
           <h2 class="songs__name">{{ title }}</h2>
@@ -101,7 +101,7 @@
             </div>
           </div>
         </div>
-      </li>
+      </>
     </div>
   </script>
 
@@ -112,34 +112,7 @@
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
-    <div class="songs__wrapper">
-      <li class="songs__wrapper--song">
-
-        <div class="songs__header">
-          <h2 class="songs__name">test</h2>
-        </div>
-  
-        <!-- cover image -->
-            <div class="player">
-              <audio controls src="songs/At_The_Top_David_Renda.mp3" type="audio/mpeg">
-              </audio>
-            </div>
-        
-        <div class="songs__text-wrraper">
-                  <!-- categories -->
-          <div class="songs__ranking">
-            <div class="songs__ranking__fill">
-            <p>Category: test</p>
-            </div>
-          </div>
-        <!-- ranking -->
-          <div class="songs__ranking">
-            <div class="songs__ranking__fill">
-            <p>#test in the ranking</p>
-            </div>
-          </div>
-        </div>
-      </li>
+    <div class="songs__wrapper-discover">
     </div>
   </script>
 

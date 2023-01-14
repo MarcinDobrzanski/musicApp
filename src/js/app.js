@@ -68,6 +68,7 @@ const app = {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initHome();
+        thisApp.initDiscover();
       });
     console.log('thisApp.data', JSON.stringify(this.data));
     console.log('thisApp.data-1', thisApp.data);
@@ -96,7 +97,6 @@ const app = {
     const thisApp = this;
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-
     thisApp.discover = new Discover(discoverContainer);
 
   },
@@ -118,7 +118,6 @@ const app = {
     thisApp.initData();
 
     thisApp.initSearch();
-    thisApp.initDiscover();
 
   },
 

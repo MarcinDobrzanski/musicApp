@@ -8,7 +8,10 @@ class Discover {
     thisDiscover.item = item;
 
     thisDiscover.render();
-    thisDiscover.getRandomSongs();
+    thisDiscover.randomSongs();
+    thisDiscover.getData();
+    thisDiscover.playerSongs();
+    thisDiscover.getSongs();
 
   }
 
@@ -21,13 +24,40 @@ class Discover {
     discoverContainer.appendChild(thisDiscover.element);
   }
 
-  getRandomSongs(min, max) {
+  randomSongs(min, max) {
+    const thisDiscover = this;
 
     min = Math.ceil(settings.songs.min);
     max = Math.floor(settings.songs.max);
 
-    const discoverSongs = Math.floor(Math.random() * (max - min + 1) + min);
-    console.log('song', discoverSongs);
+    const randomDiscoverSongs = Math.floor(Math.random() * (max - min + 1) + min);
+
+    thisDiscover.randomSong = randomDiscoverSongs;
+    console.log('thisDiscover.randomSong', thisDiscover.randomSong);
+  }
+
+  getData() {
+    const thisDiscover = this;
+
+    thisDiscover.songs = document.querySelectorAll(select.containerOf.songsWrapper);
+    console.log('thisDiscover.songs', thisDiscover.songs);
+
+  }
+
+  getSongs() {
+    const thisDiscover = this;
+
+    const testSong = thisDiscover.randomSong - 1;
+    const rightSong = thisDiscover.songs[testSong];
+    console.log('rightSong', rightSong);
+
+  }
+
+  playerSongs() {
+    GreenAudioPlayer.init({
+      selector: '.playerDiscover',
+      stopOthersOnPlay: true
+    });
   }
 }
 
