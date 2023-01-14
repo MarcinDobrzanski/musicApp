@@ -30,6 +30,10 @@ export const classNames = {
 };
 
 export const settings = {
+  songs: {
+    min: 1,
+    max: 4,
+  },
   db: {
     url: '//' + window.location.hostname + (window.location.hostname == 'localhost' ? ':3131' : ''),
     songs: 'songs',

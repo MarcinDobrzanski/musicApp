@@ -1,4 +1,4 @@
-import { templates, select } from '../settings.js';
+import { templates, select, settings } from '../settings.js';
 import utils from '../utils.js';
 
 class Discover {
@@ -8,6 +8,7 @@ class Discover {
     thisDiscover.item = item;
 
     thisDiscover.render();
+    thisDiscover.getRandomSongs();
 
   }
 
@@ -18,6 +19,15 @@ class Discover {
     thisDiscover.element = utils.createDOMFromHTML(generatedHTML);
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     discoverContainer.appendChild(thisDiscover.element);
+  }
+
+  getRandomSongs(min, max) {
+
+    min = Math.ceil(settings.songs.min);
+    max = Math.floor(settings.songs.max);
+
+    const discoverSongs = Math.floor(Math.random() * (max - min + 1) + min);
+    console.log('song', discoverSongs);
   }
 }
 
