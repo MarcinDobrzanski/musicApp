@@ -47,9 +47,15 @@ class Discover {
   getSongs() {
     const thisDiscover = this;
 
-    const testSong = thisDiscover.randomSong - 1;
-    const rightSong = thisDiscover.songs[testSong];
+    const foundSong = thisDiscover.randomSong - 1;
+    const rightSong = thisDiscover.songs[foundSong];
     console.log('rightSong', rightSong);
+
+    const discoverSongWrapper = document.querySelector('.songs__wrapper-discover');
+    console.log('discoverSongWrapper', discoverSongWrapper);
+
+    discoverSongWrapper.appendChild(rightSong);
+
 
   }
 
