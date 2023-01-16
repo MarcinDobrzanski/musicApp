@@ -81,9 +81,8 @@
           <h2 class="songs__name">{{ title }}</h2>
         </div>
   
-        <!-- cover image -->
             <div class="player">
-              <audio controls src="songs/{{ filename }}" type="audio/mpeg">
+              <audio src="songs/{{ filename }}" type="audio/mpeg">
               </audio>
             </div>
         
@@ -106,14 +105,17 @@
   </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <div class="search__wrapper">
-      <div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse corporis fugiat voluptatibus sit. Molestias voluptas quam tempore esse totam enim.</p></div>
+    <div class="search__wrapper--search">
+      <div class="search-form">
+        <label for="site-search">Search Song:</label>
+        <input type="search" id="songs-search">
+        <button>Search</button>
+      </div>
     </div>
   </script>
 
   <script id="template-discover-page" type="text/x-handlebars-template">
-    <div class="songs__wrapper-discover">
-    </div>
+    <div class="songs__wrapper-discover"></div>
   </script>
 
 

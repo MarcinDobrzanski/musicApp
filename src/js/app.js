@@ -68,7 +68,9 @@ const app = {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initHome();
+        thisApp.initSearch();
         thisApp.initDiscover();
+        thisApp.initPlayer();
       });
     console.log('thisApp.data', JSON.stringify(this.data));
     console.log('thisApp.data-1', thisApp.data);
@@ -80,8 +82,6 @@ const app = {
     for (let song in thisApp.data.songs) {
       new Home(thisApp.data.songs[song]);
     }
-
-    thisApp.initPlayer();
   },
 
   initSearch: function () {
@@ -116,8 +116,6 @@ const app = {
     thisApp.initPages();
 
     thisApp.initData();
-
-    thisApp.initSearch();
 
   },
 

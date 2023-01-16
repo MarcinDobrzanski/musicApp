@@ -10,10 +10,13 @@ export const select = {
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
     songsWrapper: '.songs__wrapper--song',
+    songsDiscoverWrapper: '.songs__wrapper-discover',
+    songsSearchWrapper: '.songs__wrapper-search',
   },
   player: {
     player: '.player',
     playerWrapper: '.songs__wrapper',
+    playerDiscover: '.playerDiscover',
   },
   nav: {
     links: '.main-nav a',

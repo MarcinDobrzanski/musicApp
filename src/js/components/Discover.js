@@ -7,10 +7,10 @@ class Discover {
 
     thisDiscover.item = item;
 
+
     thisDiscover.render();
     thisDiscover.randomSongs();
     thisDiscover.getData();
-    thisDiscover.playerSongs();
     thisDiscover.getSongs();
 
   }
@@ -51,19 +51,14 @@ class Discover {
     const rightSong = thisDiscover.songs[foundSong];
     console.log('rightSong', rightSong);
 
-    const discoverSongWrapper = document.querySelector('.songs__wrapper-discover');
+    const discoverSongWrapper = document.querySelector(select.containerOf.songsDiscoverWrapper);
+    const cloneSong = rightSong.cloneNode(true);
+    console.log('cloneSong', cloneSong);
+
+    discoverSongWrapper.appendChild(cloneSong);
     console.log('discoverSongWrapper', discoverSongWrapper);
 
-    discoverSongWrapper.appendChild(rightSong);
 
-
-  }
-
-  playerSongs() {
-    GreenAudioPlayer.init({
-      selector: '.playerDiscover',
-      stopOthersOnPlay: true
-    });
   }
 }
 

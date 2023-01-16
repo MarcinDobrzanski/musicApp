@@ -1,27 +1,46 @@
-import { templates } from '../settings.js';
+import { templates, select } from '../settings.js';
 import utils from '../utils.js';
 
 class Search {
-  constructor(searchPage) {
+  constructor(data) {
     const thisSearch = this;
 
-    thisSearch.render(searchPage);
+    thisSearch.data = data;
+
+    thisSearch.render();
+    thisSearch.getData();
+    // thisSearch.searchSong();
 
   }
 
-  render(searchPage) {
+  render() {
     const thisSearch = this;
 
-    thisSearch.dom = {};
-    thisSearch.dom.wrapper = searchPage;
+    // thisSearch.dom = {};
+    // thisSearch.dom.wrapper = searchPage;
 
-    const generatedHTML = templates.searchPage();
-    // console.log({generatedHTML});
-    const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-    // console.log({generatedDOM});
+    // const generatedHTML = templates.searchPage();
+    // const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
-    thisSearch.dom.wrapper.appendChild(generatedDOM);
+    // thisSearch.dom.wrapper.appendChild(generatedDOM);
+
+    const generatedHTML = templates.searchPage(thisSearch.data);
+    thisSearch.element = utils.createDOMFromHTML(generatedHTML);
+    const searchContainer = document.querySelector(select.containerOf.searchPage);
+    searchContainer.appendChild(thisSearch.element);
   }
+
+  getData() {
+    const thisSearch = this;
+
+    thisSearch.songsArray = document.querySelectorAll(select.containerOf.songsWrapper);
+    console.log('thisSearch.songsArray', thisSearch.songsArray);
+  }
+
+  // searchSong() {
+  //   const thisSearch = this;
+
+  // }
 }
 
 export default Search;
