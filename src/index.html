@@ -77,16 +77,12 @@
     <div class="songs__wrapper">
       <div class="songs__wrapper--song">
 
-        <div class="songs__header">
           <h2 class="songs__name">{{ title }}</h2>
-        </div>
   
-            <div class="player">
-              <audio src="songs/{{ filename }}" type="audio/mpeg">
-              </audio>
-            </div>
-        
-        <div class="songs__text-wrraper">
+          <div class="player">
+            <audio src="songs/{{ filename }}" type="audio/mpeg">
+            </audio>
+          </div>
                   <!-- categories -->
           <div class="songs__ranking">
             <div class="songs__ranking__fill">
@@ -99,21 +95,24 @@
             <p>#{{ ranking }} in the ranking</p>
             </div>
           </div>
-        </div>
       </>
     </div>
   </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <div class="search__wrapper--search">
-      <div class="search-form">
-        <label for="site-search">Search Song:</label>
-        <input type="search" id="songs-search">
-        <button>Search</button>
-      </div>
-    </div>
+    <div class="search__wrapper--search">>
+        <form>
+          <div class="search-form">
+            <input
+              type="search"
+              id="songsSearch"
+              name="searchForm"
+              placeholder="Search the song…"
+              size="30" />
+            <button>Search</button>
+          </div>
+        </form>
   </script>
-
   <script id="template-discover-page" type="text/x-handlebars-template">
     <div class="songs__wrapper-discover"></div>
   </script>

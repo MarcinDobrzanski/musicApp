@@ -1,8 +1,8 @@
 export const select = {
   templateOf: {
-    mainPage: '#template-main-page', 
-    searchPage: '#template-search-page', 
-    discoverPage: '#template-discover-page', 
+    mainPage: '#template-main-page',
+    searchPage: '#template-search-page',
+    discoverPage: '#template-discover-page',
   },
   containerOf: {
     mainPage: '.mainPage-container',
@@ -21,7 +21,10 @@ export const select = {
   nav: {
     links: '.main-nav a',
     navWrapper: '.main-nav',
-  }
+  },
+  forms: {
+    input: '.search-form',
+  },
 };
 
 export const classNames = {
