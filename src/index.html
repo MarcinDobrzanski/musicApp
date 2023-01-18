@@ -40,29 +40,7 @@
   <div id="pages">
     <section id="home">
       <div class="mainPage-container container"></div>
-      <div class="mainPage--subscribe container">
-        <div class="subscribe">
-          <div class="subscribe__image">
-            <img src="images/subscribe.jpg" alt="subscribe images">
-            <div class="subscribe__header">
-              <h3>Subscribe now</h3>
-            </div>
-            <div class="subscribe__button">
-              <a href="#subscribe">Join now</a>
-            </div>
-            <div class="subscribe--second-image">
-              <img src="images/artist.jpg" alt="second image">
-              <div class="subscribe--second-image__text">
-                <p>Dean</p>
-                <p>Hen<span>son</span></p>
-              </div>
-            </div>
-            <div class="subscribe__second-text">
-              <p>New Album</p>
-              <p>Available only for subscribers</p>
-            </div>
-          </div>
-        </div>
+      <div class="mainPage-subscribe container">
       </div>
     </section>
     <section id="search">
@@ -73,7 +51,7 @@
     </section>
   </div>
 
-  <script id="template-main-page" type="text/x-handlebars-template">
+  <script id="template-main-page-songs" type="text/x-handlebars-template">
     <div class="songs__wrapper">
       <div class="songs__wrapper--song">
 
@@ -95,26 +73,74 @@
             <p>#{{ ranking }} in the ranking</p>
             </div>
           </div>
-      </>
+        </div>
+    </div>
+  </script>
+
+  <script id="template-main-page-subscribe" type="text/x-handlebars-template">
+    <div class="subscribe">
+      <div class="subscribe__image">
+        <img src="images/subscribe.jpg" alt="subscribe images">
+        <div class="subscribe__header">
+          <h3>Subscribe now</h3>
+        </div>
+        <div class="subscribe__button">
+          <a href="#subscribe">Join now</a>
+        </div>
+        <div class="subscribe--second-image">
+          <img src="images/artist.jpg" alt="second image">
+          <div class="subscribe--second-image__text">
+            <p>Dean</p>
+            <p>Hen<span>son</span></p>
+          </div>
+        </div>
+        <div class="subscribe__second-text">
+          <p>New Album</p>
+          <p>Available only for subscribers</p>
+        </div>
+      </div>
     </div>
   </script>
 
   <script id="template-search-page" type="text/x-handlebars-template">
-    <div class="search__wrapper--search">>
+    <div class="search__wrapper--search">
+      <div class="search-form">
         <form>
-          <div class="search-form">
             <input
               type="search"
               id="songsSearch"
               name="searchForm"
               placeholder="Search the song…"
-              size="30" />
+              size="30"
+              value="" />
             <button>Search</button>
-          </div>
         </form>
+      </div>
   </script>
   <script id="template-discover-page" type="text/x-handlebars-template">
-    <div class="songs__wrapper-discover"></div>
+    <div class="songs__wrapper">
+      <div class="songs__wrapper--song">
+
+          <h2 class="songs__name">{{ title }}</h2>
+  
+          <div class="player">
+            <audio src="songs/{{ filename }}" type="audio/mpeg">
+            </audio>
+          </div>
+                  <!-- categories -->
+          <div class="songs__ranking">
+            <div class="songs__ranking__fill">
+            <p>Category: {{ categories }}</p>
+            </div>
+          </div>
+        <!-- ranking -->
+          <div class="songs__ranking">
+            <div class="songs__ranking__fill">
+            <p>#{{ ranking }} in the ranking</p>
+            </div>
+          </div>
+        </div>
+    </div>
   </script>
 
 

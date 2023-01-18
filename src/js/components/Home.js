@@ -2,10 +2,10 @@ import { templates, select } from '../settings.js';
 import utils from '../utils.js';
 
 class Home {
-  constructor(data) {
+  constructor(wrapper) {
     const thisHome = this;
 
-    thisHome.data = data;
+    thisHome.wrapper = wrapper;
 
     thisHome.render();
 
@@ -14,10 +14,10 @@ class Home {
   render() {
     const thisHome = this;
 
-    const generatedHTML = templates.mainPage(thisHome.data);
+    const generatedHTML = templates.mainPageSubscribe(thisHome.wrapper);
     thisHome.element = utils.createDOMFromHTML(generatedHTML);
-    const mainPageContainer = document.querySelector(select.containerOf.mainPage);
-    mainPageContainer.appendChild(thisHome.element);
+    const homeContainer = document.querySelector(select.containerOf.mainPageSubscribe);
+    homeContainer.appendChild(thisHome.element);
   }
 }
 

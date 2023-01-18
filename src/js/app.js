@@ -1,7 +1,8 @@
 import { select, settings, classNames } from './settings.js';
-import Home from './components/Home.js';
+import Song from './components/Song.js';
 import Search from './components/Search.js';
 import Discover from './components/Discover.js';
+import Home from './components/Home.js';
 
 const app = {
 
@@ -67,7 +68,7 @@ const app = {
       .then((parsedResponse) => {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
-        thisApp.initHome();
+        thisApp.initSong();
         thisApp.initSearch();
         thisApp.initDiscover();
         thisApp.initPlayer();
@@ -76,12 +77,22 @@ const app = {
     console.log('thisApp.data-1', thisApp.data);
   },
 
+  initSong: function () {
+    const thisApp = this;
+
+    const mainPageContainer = document.querySelector(select.containerOf.mainPageSongs);
+    for (let song of thisApp.data.songs) {
+      new Song(song, mainPageContainer);
+    }
+  },
+
   initHome: function () {
     const thisApp = this;
 
-    for (let song in thisApp.data.songs) {
-      new Home(thisApp.data.songs[song]);
-    }
+    const homeContainer = document.querySelector(select.containerOf.mainPageSubscribe);
+
+    thisApp.Home = new Home(homeContainer);
+
   },
 
   initSearch: function () {
@@ -97,7 +108,7 @@ const app = {
     const thisApp = this;
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-    thisApp.discover = new Discover(discoverContainer);
+    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs);
 
   },
 
@@ -116,6 +127,7 @@ const app = {
     thisApp.initPages();
 
     thisApp.initData();
+    thisApp.initHome();
 
   },
 

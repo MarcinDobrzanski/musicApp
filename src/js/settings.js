@@ -1,11 +1,13 @@
 export const select = {
   templateOf: {
-    mainPage: '#template-main-page',
+    mainPageSongs: '#template-main-page-songs',
+    mainPageSubscribe: '#template-main-page-subscribe',
     searchPage: '#template-search-page',
     discoverPage: '#template-discover-page',
   },
   containerOf: {
-    mainPage: '.mainPage-container',
+    mainPageSongs: '.mainPage-container',
+    mainPageSubscribe: '.mainPage-subscribe',
     pages: '#pages',
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
@@ -54,7 +56,8 @@ export const settings = {
 };
 
 export const templates = {
-  mainPage: Handlebars.compile(document.querySelector(select.templateOf.mainPage).innerHTML),
+  mainPageSongs: Handlebars.compile(document.querySelector(select.templateOf.mainPageSongs).innerHTML),
+  mainPageSubscribe: Handlebars.compile(document.querySelector(select.templateOf.mainPageSubscribe).innerHTML),
   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
   discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
 };
