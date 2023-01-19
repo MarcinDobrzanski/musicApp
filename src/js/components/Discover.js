@@ -36,8 +36,8 @@ class Discover {
     thisDiscover.rightSong = rightSong;
     console.log('rightSong', rightSong);
 
-    const discoverSongWrapper = document.querySelector(select.containerOf.songsDiscoverWrapper);
-    console.log('discoverSongWrapper', discoverSongWrapper);
+    // const discoverSongWrapper = document.querySelector(select.containerOf.songsDiscoverWrapper);
+    // console.log('discoverSongWrapper', discoverSongWrapper);
   }
 
   render() {
@@ -48,6 +48,7 @@ class Discover {
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     discoverContainer.appendChild(thisDiscover.element);
   }
+  
 }
 
 export default Discover;

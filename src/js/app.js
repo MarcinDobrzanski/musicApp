@@ -81,8 +81,10 @@ const app = {
     const thisApp = this;
 
     const mainPageContainer = document.querySelector(select.containerOf.mainPageSongs);
+    const searchPageContainer = document.querySelector(select.containerOf.searchPageSongs);
     for (let song of thisApp.data.songs) {
       new Song(song, mainPageContainer);
+      new Song(song, searchPageContainer);
     }
   },
 
@@ -100,7 +102,7 @@ const app = {
 
     const searchContainer = document.querySelector(select.containerOf.searchPage);
 
-    thisApp.search = new Search(searchContainer);
+    thisApp.search = new Search(searchContainer, thisApp.data.songs);
 
   },
 

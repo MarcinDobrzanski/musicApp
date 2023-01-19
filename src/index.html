@@ -40,11 +40,11 @@
   <div id="pages">
     <section id="home">
       <div class="mainPage-container container"></div>
-      <div class="mainPage-subscribe container">
-      </div>
+      <div class="mainPage-subscribe container"></div>
     </section>
     <section id="search">
       <div id="search-box" class="search-wrapper container"></div>
+      <div class="searchPage-container container"></div>
     </section>
     <section id="discover">
       <div class="discover-wrapper container"></div>
@@ -106,16 +106,16 @@
     <div class="search__wrapper--search">
       <div class="search-form">
         <form>
-            <input
-              type="search"
-              id="songsSearch"
-              name="searchForm"
-              placeholder="Search the song…"
-              size="30"
-              value="" />
-            <button>Search</button>
+          <div>
+            <label for="search-song">Search song</label>
+            <input id="search-song" type="text" name="text" placeholder="Your search" />
+          </div>
+          <div>
+            <input id="submit-search" type="submit" value="Search" />
+          </div>
         </form>
       </div>
+    </div>
   </script>
   <script id="template-discover-page" type="text/x-handlebars-template">
     <div class="songs__wrapper">

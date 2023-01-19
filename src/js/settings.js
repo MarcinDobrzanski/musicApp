@@ -7,13 +7,15 @@ export const select = {
   },
   containerOf: {
     mainPageSongs: '.mainPage-container',
+    searchPageSongs: '.searchPage-container',
     mainPageSubscribe: '.mainPage-subscribe',
     pages: '#pages',
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
     songsWrapper: '.songs__wrapper--song',
     songsDiscoverWrapper: '.songs__wrapper-discover',
-    songsSearchWrapper: '.songs__wrapper-search',
+    songsSearchWrapper: '.searchPage-container',
+    songSearchWrapper: '.searchPage-container .songs__wrapper',
   },
   player: {
     player: '.player',
@@ -25,7 +27,9 @@ export const select = {
     navWrapper: '.main-nav',
   },
   forms: {
-    input: '.search-form',
+    inputPlaceholder: '#search-song',
+    input: '#submit-search',
+    button: '.search-form button',
   },
 };
 
