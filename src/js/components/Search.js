@@ -1,4 +1,4 @@
-import { templates, select } from '../settings.js';
+import { templates, select, classNames } from '../settings.js';
 import utils from '../utils.js';
 
 class Search {
@@ -7,9 +7,6 @@ class Search {
 
     thisSearch.dom = item;
     thisSearch.data = data;
-    console.log('Search.data', thisSearch.data);
-
-    thisSearch.dom.songsFound = [];
 
     thisSearch.render();
     thisSearch.getElements();
@@ -32,32 +29,33 @@ class Search {
     thisSearch.dom.searchButton = document.querySelector(select.forms.input);
     thisSearch.dom.searchTerms = document.querySelector(select.forms.inputPlaceholder);
     thisSearch.dom.songsWrapper = document.querySelectorAll(select.containerOf.songSearchWrapper);
-    console.log('thisSearch.dom.songsWrapper', thisSearch.dom.songsWrapper);
+    thisSearch.dom.qtySearch = document.querySelector(select.search.qtySearch);
 
   }
 
   searchSong() {
     const thisSearch = this;
 
+    thisSearch.dom.searchResult = [];
+
     thisSearch.dom.searchButton.addEventListener('click', function (event) {
       event.preventDefault();
       const searchPhrase = thisSearch.dom.searchTerms.value;
-      console.log('thisSearch.data.searchSong', searchPhrase);
 
-      for (let song of thisSearch.data) {
-        const lowerCaseTittle = song.title.toLowerCase();
-        console.log('upperCaseTittle', lowerCaseTittle);
+      for (let song of thisSearch.dom.songsWrapper) {
+        const lowerCaseTittle = song.children[0].children[0].textContent.toLowerCase();
+        song.classList.remove(classNames.pages.active);
         if (lowerCaseTittle.indexOf(searchPhrase) > -1) {
-          thisSearch.dom.songsFound.push(song);
+          song.classList.add(classNames.pages.active);
+          thisSearch.dom.searchResult.push(song);
         }
       }
-      console.log('thisSearch.dom.songsSearch', thisSearch.dom.songsFound);
-
-      // for (let song of thisSearch.dom.songsWrapper) {
-      //   if(song.children[0].children[0].textContent)
-      //   console.log('song', song);
-      //   // song.classList.remove(classNames.menuProduct.wrapperActive);
-      // }
+      const categoriesLength = thisSearch.dom.searchResult.length;
+      if (categoriesLength < 2) {
+        thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' song...';
+      } else {
+        thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' songs...';
+      }
     });
 
   }

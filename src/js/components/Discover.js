@@ -20,7 +20,7 @@ class Discover {
     const thisDiscover = this;
 
     let min = settings.songs.min;
-    let max = settings.songs.max;
+    let max = thisDiscover.songs.length;
 
     const randomDiscoverNumber = Math.floor(Math.random() * (max - min + 1) + min);
 

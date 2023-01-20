@@ -1,0 +1,11 @@
+.discover-wrapper, .search__wrapper--search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 70px;
+
+  .songs__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}

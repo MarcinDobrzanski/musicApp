@@ -1,3 +1,16 @@
-.searchPage-container .hidden {
+.searchPage-container, .search-wrapper {
+  flex-direction: column;
+  padding-bottom: 70px;
+
+  .songs__wrapper, .search__wrapper--search {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.searchPage-container .songs__wrapper {
   display: none;
+  &.active {
+    display: flex;
+  }
 }

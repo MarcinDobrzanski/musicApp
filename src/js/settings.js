@@ -31,6 +31,9 @@ export const select = {
     input: '#submit-search',
     button: '.search-form button',
   },
+  search: {
+    qtySearch: '#qtySearchResult',
+  },
 };
 
 export const classNames = {
@@ -39,7 +42,8 @@ export const classNames = {
   },
   pages: {
     active: 'active',
-  }
+    hide: 'hidden',
+  },
 };
 
 export const settings = {

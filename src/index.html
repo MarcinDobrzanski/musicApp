@@ -106,14 +106,18 @@
     <div class="search__wrapper--search">
       <div class="search-form">
         <form>
-          <div>
-            <label for="search-song">Search song</label>
-            <input id="search-song" type="text" name="text" placeholder="Your search" />
+          <div class="body-placeholder">
+            <p>Search</p>
+            <p>name</p>
+            <input id="search-song" type="text" name="text" placeholder="Your search"/>
           </div>
           <div>
             <input id="submit-search" type="submit" value="Search" />
           </div>
         </form>
+      </div>
+      <div class="search-result-text">
+        <p id="qtySearchResult"></p>
       </div>
     </div>
   </script>
@@ -121,25 +125,25 @@
     <div class="songs__wrapper">
       <div class="songs__wrapper--song">
 
-          <h2 class="songs__name">{{ title }}</h2>
+        <h2 class="songs__name">{{ title }}</h2>
   
-          <div class="player">
-            <audio src="songs/{{ filename }}" type="audio/mpeg">
-            </audio>
-          </div>
+        <div class="player">
+          <audio src="songs/{{ filename }}" type="audio/mpeg">
+          </audio>
+        </div>
                   <!-- categories -->
-          <div class="songs__ranking">
-            <div class="songs__ranking__fill">
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
             <p>Category: {{ categories }}</p>
-            </div>
-          </div>
-        <!-- ranking -->
-          <div class="songs__ranking">
-            <div class="songs__ranking__fill">
-            <p>#{{ ranking }} in the ranking</p>
-            </div>
           </div>
         </div>
+        <!-- ranking -->
+        <div class="songs__ranking">
+          <div class="songs__ranking__fill">
+            <p>#{{ ranking }} in the ranking</p>
+          </div>
+        </div>
+      </div>
     </div>
   </script>
 
