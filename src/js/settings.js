@@ -33,6 +33,7 @@ export const select = {
     inputPlaceholder: '#search-song',
     input: '#submit-search',
     button: '.search-form button',
+    subscribeButton: '.subscribe__button',
   },
   search: {
     qtySearch: '#qtySearchResult',

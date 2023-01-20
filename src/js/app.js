@@ -140,6 +140,7 @@ const app = {
 
     thisApp.initData();
     thisApp.initHome();
+    thisApp.initSubscribe();
 
   },
 
