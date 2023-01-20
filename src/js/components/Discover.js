@@ -7,8 +7,6 @@ class Discover {
 
     thisDiscover.item = item;
     thisDiscover.songs = songs;
-    console.log('thisDiscover.songs', thisDiscover.songs);
-    console.log('thisDiscover.item', thisDiscover.item);
 
     thisDiscover.randomNumber();
     thisDiscover.getSongs();
@@ -35,9 +33,6 @@ class Discover {
     const rightSong = thisDiscover.songs[foundSong];
     thisDiscover.rightSong = rightSong;
     console.log('rightSong', rightSong);
-
-    // const discoverSongWrapper = document.querySelector(select.containerOf.songsDiscoverWrapper);
-    // console.log('discoverSongWrapper', discoverSongWrapper);
   }
 
   render() {

@@ -3,6 +3,7 @@ import Song from './components/Song.js';
 import Search from './components/Search.js';
 import Discover from './components/Discover.js';
 import Home from './components/Home.js';
+import Subscribe from './components/Subscribe.js';
 
 const app = {
 
@@ -111,6 +112,15 @@ const app = {
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     thisApp.discover = new Discover(discoverContainer, thisApp.data.songs);
+
+  },
+
+  initSubscribe: function () {
+    const thisApp = this;
+
+    const subscribeContainer = document.querySelector(select.containerOf.subscribeWrapperPage);
+
+    thisApp.Home = new Subscribe(subscribeContainer);
 
   },
 

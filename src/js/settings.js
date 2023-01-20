@@ -4,14 +4,17 @@ export const select = {
     mainPageSubscribe: '#template-main-page-subscribe',
     searchPage: '#template-search-page',
     discoverPage: '#template-discover-page',
+    subscribePage: '#template-join-now-page',
   },
   containerOf: {
     mainPageSongs: '.mainPage-container',
     searchPageSongs: '.searchPage-container',
     mainPageSubscribe: '.mainPage-subscribe',
+    subscribeWrapperPage: '.join-now-wrapper',
     pages: '#pages',
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
+    subscribePage: '.join-now__wrapper',
     songsWrapper: '.songs__wrapper--song',
     songsDiscoverWrapper: '.songs__wrapper-discover',
     songsSearchWrapper: '.searchPage-container',
@@ -68,4 +71,5 @@ export const templates = {
   mainPageSubscribe: Handlebars.compile(document.querySelector(select.templateOf.mainPageSubscribe).innerHTML),
   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
   discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
+  subscribePage: Handlebars.compile(document.querySelector(select.templateOf.subscribePage).innerHTML),
 };
