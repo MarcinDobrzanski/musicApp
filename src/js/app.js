@@ -97,7 +97,7 @@ const app = {
 
     const categoryFilterContainer = document.querySelector(select.containerOf.categoryFilterHome);
 
-    thisApp.Home = new CategoryFilter(categoryFilterContainer);
+    thisApp.Home = new CategoryFilter(categoryFilterContainer, thisApp.data.songs);
 
   },
 
