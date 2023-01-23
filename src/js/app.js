@@ -4,6 +4,7 @@ import Search from './components/Search.js';
 import Discover from './components/Discover.js';
 import Home from './components/Home.js';
 import Subscribe from './components/Subscribe.js';
+import CategoryFilter from './components/CategoryFilter.js';
 
 const app = {
 
@@ -69,6 +70,7 @@ const app = {
       .then((parsedResponse) => {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
+        thisApp.initCategoryFilter();
         thisApp.initSong();
         thisApp.initSearch();
         thisApp.initDiscover();
@@ -85,8 +87,18 @@ const app = {
     const searchPageContainer = document.querySelector(select.containerOf.searchPageSongs);
     for (let song of thisApp.data.songs) {
       new Song(song, mainPageContainer);
+      // Do it differently
       new Song(song, searchPageContainer);
     }
+  },
+
+  initCategoryFilter: function () {
+    const thisApp = this;
+
+    const categoryFilterContainer = document.querySelector(select.containerOf.categoryFilterHome);
+
+    thisApp.Home = new CategoryFilter(categoryFilterContainer);
+
   },
 
   initHome: function () {

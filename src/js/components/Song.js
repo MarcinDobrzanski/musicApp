@@ -9,6 +9,7 @@ class Song {
     thisSong.wrapper = wrapper;
 
     thisSong.render();
+    thisSong.categoryFilter();
 
   }
 
@@ -19,6 +20,15 @@ class Song {
     thisSong.element = utils.createDOMFromHTML(generatedHTML);
     // const mainPageContainer = document.querySelector(select.containerOf.mainPage);
     thisSong.wrapper.appendChild(thisSong.element);
+  }
+
+  categoryFilter() {
+    const thisSong = this;
+
+    thisSong.allCategory = [];
+    
+    const categoryFromSong = thisSong.data.categories;
+    thisSong.allCategory.push(categoryFromSong);
   }
 }
 

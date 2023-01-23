@@ -5,11 +5,13 @@ export const select = {
     searchPage: '#template-search-page',
     discoverPage: '#template-discover-page',
     subscribePage: '#template-join-now-page',
+    categoryFilter: '#template-categoryFilter',
   },
   containerOf: {
     mainPageSongs: '.mainPage-container',
     searchPageSongs: '.searchPage-container',
     mainPageSubscribe: '.mainPage-subscribe',
+    categoryFilterHome: '.mainPage-categoryFilter',
     subscribeWrapperPage: '.join-now-wrapper',
     pages: '#pages',
     searchPage: '#search-box',
@@ -73,4 +75,5 @@ export const templates = {
   searchPage: Handlebars.compile(document.querySelector(select.templateOf.searchPage).innerHTML),
   discoverPage: Handlebars.compile(document.querySelector(select.templateOf.discoverPage).innerHTML),
   subscribePage: Handlebars.compile(document.querySelector(select.templateOf.subscribePage).innerHTML),
+  categoryFilter: Handlebars.compile(document.querySelector(select.templateOf.categoryFilter).innerHTML),
 };
