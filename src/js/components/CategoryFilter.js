@@ -38,7 +38,7 @@ class CategoryFilter {
     }
 
     console.log('namesCategory', thisCategoryFilter.namesCategory);
-    const categoryFilterHTML = '<li>' + thisCategoryFilter.namesCategory.join(',</li><li>') + '</li>';
+    const categoryFilterHTML = '<li>' + thisCategoryFilter.namesCategory.join('</li><li>') + '</li>';
     console.log('categoryFilterHTML', categoryFilterHTML);
     const categoryFilterWrapper = document.querySelector(select.containerOf.filterWrapper);
     console.log('categoryFilterWrapper', categoryFilterWrapper);
