@@ -70,8 +70,8 @@ const app = {
       .then((parsedResponse) => {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
-        thisApp.initCategoryFilter();
         thisApp.initSong();
+        thisApp.initCategoryFilter();
         thisApp.initSearch();
         thisApp.initDiscover();
         thisApp.initPlayer();
