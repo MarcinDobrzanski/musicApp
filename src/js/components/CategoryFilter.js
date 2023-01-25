@@ -28,20 +28,15 @@ class CategoryFilter {
     thisCategoryFilter.namesCategory = [];
 
     for (let song of thisCategoryFilter.data) {
-      console.log('song', song);
       for (let item of song.categories) {
-        console.log('item', item);
         if (!thisCategoryFilter.namesCategory.includes(item)) {
           thisCategoryFilter.namesCategory.push(item);
         }
       }
     }
 
-    console.log('namesCategory', thisCategoryFilter.namesCategory);
-    const categoryFilterHTML = '<li>' + thisCategoryFilter.namesCategory.join('</li><li>') + '</li>';
-    console.log('categoryFilterHTML', categoryFilterHTML);
+    const categoryFilterHTML = '<li>' + thisCategoryFilter.namesCategory.join('</li>'+','+'<li>') + '</li>';
     const categoryFilterWrapper = document.querySelector(select.containerOf.filterWrapper);
-    console.log('categoryFilterWrapper', categoryFilterWrapper);
     categoryFilterWrapper.innerHTML = categoryFilterHTML;
 
   }
@@ -52,7 +47,6 @@ class CategoryFilter {
     thisCategoryFilter.categoryWrapperItem = document.querySelector(select.containerOf.filterWrapper).children;
     thisCategoryFilter.categoryWrapper = document.querySelector(select.containerOf.filterWrapper);
     thisCategoryFilter.songWrapper = document.querySelectorAll(select.containerOf.songMainPageWrapper);
-    console.log('thisCategoryFilter.songWrapper', thisCategoryFilter.songWrapper);
 
 
     thisCategoryFilter.categoryWrapper.addEventListener('click', function (event) {
@@ -64,13 +58,11 @@ class CategoryFilter {
       }
 
       for (let song of thisCategoryFilter.songWrapper) {
-        console.log('filter-song', song);
         const includesCategorySong = song.children[0].children[2].children[0].children[0].textContent;
-        if (includesCategorySong.includes(event.target.textContent) && song.classList.contains(classNames.pages.active)) {
-          console.log('includesCategorySong', includesCategorySong);
-          song.classList.remove(classNames.pages.active);
-        } else if (includesCategorySong.includes(event.target.textContent) && !song.classList.contains(classNames.pages.active)) {
-          song.classList.add(classNames.pages.active);
+        if (!includesCategorySong.includes(event.target.textContent) && song.classList.contains(classNames.pages.hide)) {
+          song.classList.remove(classNames.pages.hide);
+        } else if (!includesCategorySong.includes(event.target.textContent) && !song.classList.contains(classNames.pages.hide)) {
+          song.classList.add(classNames.pages.hide);
         }
       }
     });

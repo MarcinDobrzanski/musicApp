@@ -1,3 +1,25 @@
+.category-filter__wrapper--text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    padding-left: 0;
+
+    li {
+      padding-left: 3px;
+      cursor: pointer;
+    }
+
+    .active {
+      color: $color-main;
+    }
+  }
+}
+
 .mainPage-container {
   display: flex;
   flex-direction: column;
@@ -6,6 +28,10 @@
   .songs__wrapper {
     display: flex;
     justify-content: center;
+  }
+
+  .hidden {
+    display: none;
   }
 }
 
@@ -94,28 +120,6 @@
     }
 
     span {
-      color: $color-main;
-    }
-  }
-}
-
-.category-filter__wrapper--text {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-
-  ul {
-    display: flex;
-    padding-left: 3px;
-
-    li {
-      padding-right: 3px;
-      cursor: pointer;
-    }
-
-    .active {
       color: $color-main;
     }
   }
