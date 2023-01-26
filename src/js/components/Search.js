@@ -8,9 +8,12 @@ class Search {
     thisSearch.dom = item;
     thisSearch.data = data;
 
+    thisSearch.categories = [];
+
     thisSearch.render();
     thisSearch.getElements();
     thisSearch.searchSong();
+    thisSearch.searchByCategory();
 
   }
 
@@ -51,12 +54,37 @@ class Search {
         }
       }
       const categoriesLength = thisSearch.dom.searchResult.length;
-      if (categoriesLength < 2) {
+      if (categoriesLength == 1) {
         thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' song...';
       } else {
         thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' songs...';
       }
     });
+
+  }
+
+  searchByCategory() {
+    const thisSearch = this;
+
+    for (let song of thisSearch.data) {
+      for (let item of song.categories) {
+        if (!thisSearch.categories.includes(item)) {
+          thisSearch.categories.push(item);
+        }
+      }
+    }
+
+    console.log('thisSearch.categories', thisSearch.categories);
+
+    const searchInputCategories = document.querySelector(select.forms.searchCategories);
+    const categoryOptionHTML = '<option id="option-category" value="default"> </option>';
+    searchInputCategories.innerHTML = categoryOptionHTML;
+
+    for (let category of thisSearch.categories) {
+      const searchInputCategories = document.querySelector(select.forms.searchCategories);
+      const categoryFilterHTML = '<option id="option-category" value="' + category + '">' + category + '</option>';
+      searchInputCategories.innerHTML += categoryFilterHTML;
+    }
 
   }
 }

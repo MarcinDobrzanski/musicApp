@@ -38,6 +38,7 @@ export const select = {
     input: '#submit-search',
     button: '.search-form button',
     subscribeButton: '.subscribe__button',
+    searchCategories: '#categories-select',
   },
   search: {
     qtySearch: '#qtySearchResult',

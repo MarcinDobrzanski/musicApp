@@ -8,6 +8,8 @@ class CategoryFilter {
     thisCategoryFilter.wrapper = wrapper;
     thisCategoryFilter.data = data;
 
+    thisCategoryFilter.namesCategory = [];
+
     thisCategoryFilter.render();
     thisCategoryFilter.addItem();
     thisCategoryFilter.filter();
@@ -24,8 +26,6 @@ class CategoryFilter {
 
   addItem() {
     const thisCategoryFilter = this;
-
-    thisCategoryFilter.namesCategory = [];
 
     for (let song of thisCategoryFilter.data) {
       for (let item of song.categories) {
