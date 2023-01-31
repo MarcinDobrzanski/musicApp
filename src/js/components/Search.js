@@ -8,12 +8,13 @@ class Search {
     thisSearch.dom = item;
     thisSearch.data = data;
 
+    thisSearch.dom.searchResult = [];
     thisSearch.categories = [];
 
     thisSearch.render();
     thisSearch.getElements();
+    thisSearch.prepareCategory();
     thisSearch.searchSong();
-    thisSearch.searchByCategory();
 
   }
 
@@ -39,8 +40,6 @@ class Search {
   searchSong() {
     const thisSearch = this;
 
-    thisSearch.dom.searchResult = [];
-
     thisSearch.dom.searchButton.addEventListener('click', function (event) {
       event.preventDefault();
       const searchPhrase = thisSearch.dom.searchTerms.value;
@@ -48,11 +47,13 @@ class Search {
       for (let song of thisSearch.dom.songsWrapper) {
         const lowerCaseTittle = song.children[0].children[0].textContent.toLowerCase();
         song.classList.remove(classNames.pages.active);
+        thisSearch.dom.searchResult.length = 0;
         if (lowerCaseTittle.indexOf(searchPhrase) > -1) {
           song.classList.add(classNames.pages.active);
           thisSearch.dom.searchResult.push(song);
         }
       }
+      console.log('thisSearch.dom.searchResult', thisSearch.dom.searchResult);
       const categoriesLength = thisSearch.dom.searchResult.length;
       if (categoriesLength == 1) {
         thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' song...';
@@ -63,7 +64,7 @@ class Search {
 
   }
 
-  searchByCategory() {
+  prepareCategory() {
     const thisSearch = this;
 
     for (let song of thisSearch.data) {
