@@ -35,10 +35,12 @@ export const select = {
   },
   forms: {
     inputPlaceholder: '#search-song',
+    selectCategories: '#categories-select',
     input: '#submit-search',
     button: '.search-form button',
     subscribeButton: '.subscribe__button',
     searchCategories: '#categories-select',
+    selectDefault: 'default',
   },
   search: {
     qtySearch: '#qtySearchResult',
