@@ -58,7 +58,7 @@ class Search {
           song.classList.add(classNames.pages.active);
           thisSearch.dom.searchResult.push(song);
         }
-      };
+      }
       const categoriesLength = thisSearch.dom.searchResult.length;
       if (categoriesLength == 1) {
         thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' song...';

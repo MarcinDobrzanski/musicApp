@@ -2,11 +2,13 @@ import { templates, select, settings } from '../settings.js';
 import utils from '../utils.js';
 
 class Discover {
-  constructor(item, songs) {
+  constructor(item, songs, categories) {
     const thisDiscover = this;
 
     thisDiscover.item = item;
     thisDiscover.songs = songs;
+    thisDiscover.categories = categories;
+    console.log('thisDiscover.categories', thisDiscover.categories);
 
     thisDiscover.randomNumber();
     thisDiscover.getSongs();

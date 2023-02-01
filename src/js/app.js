@@ -75,9 +75,8 @@ const app = {
         thisApp.initSearch();
         thisApp.initDiscover();
         thisApp.initPlayer();
+        thisApp.initProfile();
       });
-    console.log('thisApp.data', JSON.stringify(this.data));
-    console.log('thisApp.data-1', thisApp.data);
   },
 
   initSong: function () {
@@ -107,7 +106,6 @@ const app = {
     const homeContainer = document.querySelector(select.containerOf.mainPageSubscribe);
 
     thisApp.Home = new Home(homeContainer);
-
   },
 
   initSearch: function () {
@@ -123,7 +121,7 @@ const app = {
     const thisApp = this;
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs);
+    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, );
 
   },
 
@@ -142,6 +140,36 @@ const app = {
       selector: select.player.player,
       stopOthersOnPlay: true
     });
+
+  },
+
+  initProfile: function () {
+    const thisApp = this;
+
+    thisApp.favoriteSongs = [];
+
+    const listenSongs = document.querySelectorAll(select.player.audioPlayer);
+    for (let song of listenSongs) {
+      console.log('song', song);
+      song.addEventListener('play', function() {
+        console.log('Piosenka jest odtwarzana.');
+        console.log('test.', song);
+        const pathSrcFile = song.getAttribute('src');
+        console.log('pathSrcFile', pathSrcFile);
+        const fileName = pathSrcFile.split('/').pop();
+        if (thisApp.favoriteSongs.indexOf(fileName) == -1) {
+          thisApp.favoriteSongs.push(fileName);
+        }
+
+        console.log('thisApp.favoriteSongs', thisApp.favoriteSongs);
+      });
+    }
+
+    // const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
+    // console.log('songsWrapper', songsWrapper);
+    // for (let item of songsWrapper) {
+
+    // }
 
   },
 

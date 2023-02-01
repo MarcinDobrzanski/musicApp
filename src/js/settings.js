@@ -18,6 +18,7 @@ export const select = {
     discoverPage: '.discover-wrapper',
     subscribePage: '.join-now__wrapper',
     songsWrapper: '.songs__wrapper--song',
+    songsWrapperMainPage: '.mainPage-container .songs__wrapper--song',
     songsDiscoverWrapper: '.songs__wrapper-discover',
     songsSearchWrapper: '.searchPage-container',
     songSearchWrapper: '.searchPage-container .songs__wrapper',
@@ -28,6 +29,7 @@ export const select = {
     player: '.player',
     playerWrapper: '.songs__wrapper',
     playerDiscover: '.playerDiscover',
+    audioPlayer: '.mainPage-container #player-song',
   },
   nav: {
     links: '.main-nav a',
