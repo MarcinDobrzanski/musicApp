@@ -7,12 +7,40 @@ class Discover {
 
     thisDiscover.item = item;
     thisDiscover.songs = songs;
-    thisDiscover.categories = categories;
+    thisDiscover.categoryPlayed = categories;
+    console.log('thisDiscover.categoryPlayed', thisDiscover.categoryPlayed);
 
     thisDiscover.randomNumber();
     thisDiscover.getSongs();
-    thisDiscover.render();
+    thisDiscover.suggestedSong();
+    thisDiscover.mostPlayedCategory();
+    // thisDiscover.render();
 
+  }
+
+  mostPlayedCategory() {
+    const thisDiscover = this;
+
+    const categories = thisDiscover.categoryPlayed;
+    const frequency = {};
+    for (let i = 0; i < categories.length; i++) {
+      const category = categories[i].trim();
+      if (!frequency[category]) {
+        frequency[category] = 0;
+      }
+      frequency[category]++;
+    }
+
+    let mostFrequentCategory = '';
+    let maxFrequency = 0;
+    for (let category in frequency) {
+      if (frequency[category] > maxFrequency) {
+        maxFrequency = frequency[category];
+        mostFrequentCategory = category;
+      }
+    }
+
+    thisDiscover.mostPopularCategory = mostFrequentCategory;
   }
 
   randomNumber() {
@@ -44,7 +72,17 @@ class Discover {
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     discoverContainer.appendChild(thisDiscover.element);
   }
-  
+
+  suggestedSong() {
+    const thisDiscover = this;
+
+    thisDiscover.discoverSong = document.querySelectorAll(select.containerOf.discoverSongWrapper);
+
+    for (let song of thisDiscover.discoverSong) {
+      console.log('song', song);
+    }
+  }
+
 }
 
 export default Discover;

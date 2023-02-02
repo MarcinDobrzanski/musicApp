@@ -16,6 +16,7 @@ export const select = {
     pages: '#pages',
     searchPage: '#search-box',
     discoverPage: '.discover-wrapper',
+    discoverSongWrapper: '.discover-wrapper .songs__wrapper',
     subscribePage: '.join-now__wrapper',
     songsWrapper: '.songs__wrapper--song',
     songsWrapperMainPage: '.mainPage-container .songs__wrapper--song',

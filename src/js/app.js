@@ -37,6 +37,10 @@ const app = {
 
         const id = clickedElement.getAttribute('href').replace('#', '');
         thisApp.activatePage(id);
+        if (id == 'discover') {
+          console.log('page.id', id);
+          thisApp.initDiscover();
+        }
 
         window.location.hash = '#/' + id;
       });
@@ -71,11 +75,11 @@ const app = {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initSong();
-        thisApp.initCategoryFilter();
-        thisApp.initSearch();
-        thisApp.initDiscover();
+        // thisApp.initDiscover();
         thisApp.initPlayer();
         thisApp.initSongsPlayed();
+        thisApp.initCategoryFilter();
+        thisApp.initSearch();
       });
   },
 
@@ -84,9 +88,11 @@ const app = {
 
     const mainPageContainer = document.querySelector(select.containerOf.mainPageSongs);
     const searchPageContainer = document.querySelector(select.containerOf.searchPageSongs);
+    const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     for (let song of thisApp.data.songs) {
       new Song(song, mainPageContainer);
       new Song(song, searchPageContainer);
+      new Song(song, discoverContainer);
     }
   },
 
@@ -120,7 +126,7 @@ const app = {
     const thisApp = this;
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, thisApp.favoriteSongs);
+    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, thisApp.categoryPlayed);
 
   },
 
