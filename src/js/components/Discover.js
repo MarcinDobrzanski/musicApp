@@ -8,12 +8,12 @@ class Discover {
     thisDiscover.item = item;
     thisDiscover.songs = songs;
     thisDiscover.categoryPlayed = categories;
-    console.log('thisDiscover.categoryPlayed', thisDiscover.categoryPlayed);
 
+    thisDiscover.mostPlayedCategory();
+    thisDiscover.songArray();
     thisDiscover.randomNumber();
     thisDiscover.getSongs();
     thisDiscover.suggestedSong();
-    thisDiscover.mostPlayedCategory();
     // thisDiscover.render();
 
   }
@@ -43,11 +43,33 @@ class Discover {
     thisDiscover.mostPopularCategory = mostFrequentCategory;
   }
 
+  songArray() {
+    const thisDiscover = this;
+
+    thisDiscover.songsArray = [];
+
+    thisDiscover.discoverSong = document.querySelectorAll(select.containerOf.discoverSongWrapper);
+    console.log('thisDiscover.discoverSong1', thisDiscover.discoverSong);
+    for (let song of thisDiscover.discoverSong) {
+      console.log('song1', song);
+      const songCategory = song.children[0].children[2].innerText;
+      console.log('songCategory', songCategory);
+      if (songCategory.indexOf(thisDiscover.mostPopularCategory) > -1) {
+        thisDiscover.songsArray.push(song);
+      }
+    }
+    console.log('thisDiscover.songsArray', thisDiscover.songsArray);
+  }
+
   randomNumber() {
     const thisDiscover = this;
 
     let min = settings.songs.min;
     let max = thisDiscover.songs.length;
+
+    if (thisDiscover.songsArray.length > 0) {
+      max = thisDiscover.songsArray.length;
+    }
 
     const randomDiscoverNumber = Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -75,8 +97,6 @@ class Discover {
 
   suggestedSong() {
     const thisDiscover = this;
-
-    thisDiscover.discoverSong = document.querySelectorAll(select.containerOf.discoverSongWrapper);
 
     for (let song of thisDiscover.discoverSong) {
       console.log('song', song);
