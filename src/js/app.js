@@ -75,7 +75,7 @@ const app = {
         thisApp.initSearch();
         thisApp.initDiscover();
         thisApp.initPlayer();
-        thisApp.initProfile();
+        thisApp.initSongsPlayed();
       });
   },
 
@@ -86,7 +86,6 @@ const app = {
     const searchPageContainer = document.querySelector(select.containerOf.searchPageSongs);
     for (let song of thisApp.data.songs) {
       new Song(song, mainPageContainer);
-      // Do it differently
       new Song(song, searchPageContainer);
     }
   },
@@ -121,7 +120,7 @@ const app = {
     const thisApp = this;
 
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, );
+    thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, thisApp.favoriteSongs);
 
   },
 
@@ -143,34 +142,41 @@ const app = {
 
   },
 
-  initProfile: function () {
+  initSongsPlayed: function () {
     const thisApp = this;
 
-    thisApp.favoriteSongs = [];
+    thisApp.songsPlayed = [];
+    thisApp.categoryPlayed = [];
 
     const listenSongs = document.querySelectorAll(select.player.audioPlayer);
+    const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
+    console.log('songsWrapper', songsWrapper);
     for (let song of listenSongs) {
-      console.log('song', song);
-      song.addEventListener('play', function() {
-        console.log('Piosenka jest odtwarzana.');
-        console.log('test.', song);
+      song.addEventListener('play', function () {
+        console.log('song', song);
+        console.log('działa!');
         const pathSrcFile = song.getAttribute('src');
-        console.log('pathSrcFile', pathSrcFile);
         const fileName = pathSrcFile.split('/').pop();
-        if (thisApp.favoriteSongs.indexOf(fileName) == -1) {
-          thisApp.favoriteSongs.push(fileName);
+        thisApp.songsPlayed.push(fileName);
+
+        for (let item of songsWrapper) {
+          console.log('item', item);
+          const pathToSong = item.children[1].children['player-song'].src;
+          console.log('pathToSong', pathToSong);
+          const songName = pathToSong.split('/').pop();
+          console.log('songName', songName);
+          if (fileName == songName) {
+            console.log('songName', songName);
+            const itemCategories = item.children[2].innerText;
+            const categories = itemCategories.split(':')[1].split(',');
+            thisApp.categoryPlayed = thisApp.categoryPlayed.concat(categories);
+          }
         }
-
-        console.log('thisApp.favoriteSongs', thisApp.favoriteSongs);
+        console.log('thisApp.songsPlayed', thisApp.songsPlayed);
+        console.log('thisApp.categoryPlayed', thisApp.categoryPlayed);
       });
+
     }
-
-    // const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
-    // console.log('songsWrapper', songsWrapper);
-    // for (let item of songsWrapper) {
-
-    // }
-
   },
 
   init: function () {

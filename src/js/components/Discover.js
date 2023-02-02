@@ -8,7 +8,6 @@ class Discover {
     thisDiscover.item = item;
     thisDiscover.songs = songs;
     thisDiscover.categories = categories;
-    console.log('thisDiscover.categories', thisDiscover.categories);
 
     thisDiscover.randomNumber();
     thisDiscover.getSongs();
