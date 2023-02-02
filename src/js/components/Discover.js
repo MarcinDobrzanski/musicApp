@@ -1,5 +1,4 @@
-import { templates, select, settings } from '../settings.js';
-import utils from '../utils.js';
+import { select, settings, classNames } from '../settings.js';
 
 class Discover {
   constructor(item, songs, categories) {
@@ -12,9 +11,7 @@ class Discover {
     thisDiscover.mostPlayedCategory();
     thisDiscover.songArray();
     thisDiscover.randomNumber();
-    thisDiscover.getSongs();
     thisDiscover.suggestedSong();
-    // thisDiscover.render();
 
   }
 
@@ -41,6 +38,7 @@ class Discover {
     }
 
     thisDiscover.mostPopularCategory = mostFrequentCategory;
+    console.log('thisDiscover.mostPopularCategory', thisDiscover.mostPopularCategory);
   }
 
   songArray() {
@@ -49,11 +47,8 @@ class Discover {
     thisDiscover.songsArray = [];
 
     thisDiscover.discoverSong = document.querySelectorAll(select.containerOf.discoverSongWrapper);
-    console.log('thisDiscover.discoverSong1', thisDiscover.discoverSong);
     for (let song of thisDiscover.discoverSong) {
-      console.log('song1', song);
       const songCategory = song.children[0].children[2].innerText;
-      console.log('songCategory', songCategory);
       if (songCategory.indexOf(thisDiscover.mostPopularCategory) > -1) {
         thisDiscover.songsArray.push(song);
       }
@@ -77,29 +72,24 @@ class Discover {
     console.log('thisDiscover.randomNumber', thisDiscover.randomNumber);
   }
 
-  getSongs() {
-    const thisDiscover = this;
-
-    const foundSong = thisDiscover.randomNumber - 1;
-    const rightSong = thisDiscover.songs[foundSong];
-    thisDiscover.rightSong = rightSong;
-    console.log('rightSong', rightSong);
-  }
-
-  render() {
-    const thisDiscover = this;
-
-    const generatedHTML = templates.discoverPage(thisDiscover.rightSong);
-    thisDiscover.element = utils.createDOMFromHTML(generatedHTML);
-    const discoverContainer = document.querySelector(select.containerOf.discoverPage);
-    discoverContainer.appendChild(thisDiscover.element);
-  }
-
   suggestedSong() {
     const thisDiscover = this;
 
+    const foundSong = thisDiscover.randomNumber - 1;
+    let rightSong = thisDiscover.songs[foundSong];
+
+    if (thisDiscover.songsArray.length > 0) {
+      rightSong = thisDiscover.songsArray[foundSong];
+    }
+    thisDiscover.rightSong = rightSong;
+    console.log('rightSong', rightSong);
+
     for (let song of thisDiscover.discoverSong) {
-      console.log('song', song);
+      song.classList.remove(classNames.pages.active);
+      if (song == thisDiscover.rightSong) {
+        console.log('song5', song);
+        song.classList.add(classNames.pages.active);
+      }
     }
   }
 

@@ -156,11 +156,8 @@ const app = {
 
     const listenSongs = document.querySelectorAll(select.player.audioPlayer);
     const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
-    console.log('songsWrapper', songsWrapper);
     for (let song of listenSongs) {
       song.addEventListener('play', function () {
-        console.log('song', song);
-        console.log('działa!');
         const pathSrcFile = song.getAttribute('src');
         const fileName = pathSrcFile.split('/').pop();
         thisApp.songsPlayed.push(fileName);
@@ -168,18 +165,13 @@ const app = {
         for (let item of songsWrapper) {
           console.log('item', item);
           const pathToSong = item.children[1].children['player-song'].src;
-          console.log('pathToSong', pathToSong);
           const songName = pathToSong.split('/').pop();
-          console.log('songName', songName);
           if (fileName == songName) {
-            console.log('songName', songName);
             const itemCategories = item.children[2].innerText;
             const categories = itemCategories.split(':')[1].split(',');
             thisApp.categoryPlayed = thisApp.categoryPlayed.concat(categories);
           }
         }
-        console.log('thisApp.songsPlayed', thisApp.songsPlayed);
-        console.log('thisApp.categoryPlayed', thisApp.categoryPlayed);
       });
 
     }
