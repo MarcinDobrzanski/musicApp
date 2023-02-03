@@ -38,7 +38,6 @@ const app = {
         const id = clickedElement.getAttribute('href').replace('#', '');
         thisApp.activatePage(id);
         if (id == 'discover') {
-          console.log('page.id', id);
           thisApp.initDiscover();
         }
 
@@ -75,7 +74,6 @@ const app = {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initSong();
-        // thisApp.initDiscover();
         thisApp.initPlayer();
         thisApp.initSongsPlayed();
         thisApp.initCategoryFilter();
@@ -85,14 +83,17 @@ const app = {
 
   initSong: function () {
     const thisApp = this;
-
-    const mainPageContainer = document.querySelector(select.containerOf.mainPageSongs);
-    const searchPageContainer = document.querySelector(select.containerOf.searchPageSongs);
-    const discoverContainer = document.querySelector(select.containerOf.discoverPage);
+  
+    const containers = [
+      document.querySelector(select.containerOf.mainPageSongs),
+      document.querySelector(select.containerOf.searchPageSongs),
+      document.querySelector(select.containerOf.discoverPage)
+    ];
+  
     for (let song of thisApp.data.songs) {
-      new Song(song, mainPageContainer);
-      new Song(song, searchPageContainer);
-      new Song(song, discoverContainer);
+      for (let container of containers) {
+        new Song(song, container);
+      }
     }
   },
 
@@ -163,7 +164,6 @@ const app = {
         thisApp.songsPlayed.push(fileName);
 
         for (let item of songsWrapper) {
-          console.log('item', item);
           const pathToSong = item.children[1].children['player-song'].src;
           const songName = pathToSong.split('/').pop();
           if (fileName == songName) {

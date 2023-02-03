@@ -74,16 +74,18 @@
             <audio id="player-song" src="songs/{{ filename }}" type="audio/mpeg">
             </audio>
           </div>
-                  <!-- categories -->
-          <div class="songs__categories">
-            <div class="songs__categories__fill">
-            <p>Category: {{ categories }}</p>
+          <div class="categories-wrapper">
+                              <!-- categories -->
+            <div class="songs__categories">
+              <div class="songs__categories__fill">
+              <p>Category: {{ categories }}</p>
+              </div>
             </div>
-          </div>
         <!-- ranking -->
-          <div class="songs__ranking">
-            <div class="songs__ranking__fill">
-            <p>#{{ ranking }} in the ranking</p>
+            <div class="songs__ranking">
+             <div class="songs__ranking__fill">
+              <p>#{{ ranking }} in the ranking</p>
+              </div>
             </div>
           </div>
         </div>
@@ -127,7 +129,7 @@
             <select name="categories" id="categories-select">
             </select>
           </div>
-          <div>
+          <div class="btn-search">
             <input id="submit-search" type="submit" value="Search" />
           </div>
         </form>

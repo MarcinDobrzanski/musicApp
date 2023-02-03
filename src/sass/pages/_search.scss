@@ -1,10 +1,62 @@
-.searchPage-container, .search-wrapper {
+.searchPage-container,
+.search-wrapper {
   flex-direction: column;
-  padding-bottom: 70px;
 
-  .songs__wrapper, .search__wrapper--search {
+  .songs__wrapper,
+  .search__wrapper--search {
     display: flex;
     justify-content: center;
+  }
+
+  .search__wrapper--search {
+    padding-bottom: 30px;
+  }
+}
+
+.search__wrapper--search .search-form {
+  p {
+    margin-bottom: 50px;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  label,
+  input,
+  select {
+    font-size: 30px;
+    padding: 0 20px;
+    border-radius: 8px;
+  }
+
+  input#search-song {
+    width: 160px;
+  }
+
+  .body-placeholder {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+}
+
+.btn-search {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 60px 0;
+
+  input[type='submit' i] {
+    padding: 10px 20px;
+    color: $color-light;
+    background-color: $color-main;
+    cursor: pointer;
+  }
+}
+
+.search-result-text {
+  display: flex;
+  justify-content: center;
+  #qtySearchResult {
+    font-size: 30px;
   }
 }
 
