@@ -83,13 +83,13 @@ const app = {
 
   initSong: function () {
     const thisApp = this;
-  
+
     const containers = [
       document.querySelector(select.containerOf.mainPageSongs),
       document.querySelector(select.containerOf.searchPageSongs),
       document.querySelector(select.containerOf.discoverPage)
     ];
-  
+
     for (let song of thisApp.data.songs) {
       for (let container of containers) {
         new Song(song, container);
@@ -177,6 +177,12 @@ const app = {
     }
   },
 
+  initToUpperCase() {
+    const subscribeButton = document.querySelector(select.forms.toUpperCase);
+
+    subscribeButton.textContent = subscribeButton.textContent.toUpperCase();
+  },
+
   init: function () {
     const thisApp = this;
 
@@ -185,6 +191,7 @@ const app = {
     thisApp.initData();
     thisApp.initHome();
     thisApp.initSubscribe();
+    thisApp.initToUpperCase();
 
   },
 

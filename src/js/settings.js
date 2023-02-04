@@ -44,6 +44,7 @@ export const select = {
     subscribeButton: '.subscribe__button',
     searchCategories: '#categories-select',
     selectDefault: 'default',
+    toUpperCase: '#toUpperCase',
   },
   search: {
     qtySearch: '#qtySearchResult',
