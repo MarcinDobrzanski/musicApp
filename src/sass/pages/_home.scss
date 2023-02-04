@@ -125,3 +125,52 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .subscribe__image {
+  
+    .subscribe__header {
+  
+      h3 {
+        font-size: 3rem;
+      }
+    }
+
+    .subscribe__button {
+      padding: 10px 40px;
+      border-radius: 5px;
+      font-size: 2rem;
+      top: 55%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+@media (max-width: 725px) {
+  .subscribe__image {
+  
+    .subscribe__header {
+  
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    .subscribe__button {
+      font-size: 1rem;
+    }
+
+    .subscribe__second-text {
+      text-align: center;
+      left: 50%;
+
+      p:first-child  {
+        font-size: 1rem;
+      }
+  
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

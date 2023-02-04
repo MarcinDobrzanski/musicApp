@@ -86,7 +86,39 @@ section {
   }
 }
 
+.green-audio-player .slider .gap-progress .pin {
+  background-color: $color-main;
+}
+
 .footer {
   padding: 10px 0;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    .hero__image {
+
+      .hero--text {
+  
+        &__title {
+          font-size: 10em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 725px) {
+  .container {
+    .hero__image {
+
+      .hero--text {
+  
+        &__title {
+          font-size: 6em;
+        }
+      }
+    }
+  }
 }
