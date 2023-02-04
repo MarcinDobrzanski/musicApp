@@ -25,6 +25,7 @@ export const select = {
     songSearchWrapper: '.searchPage-container .songs__wrapper',
     songMainPageWrapper: '.mainPage-container .songs__wrapper',
     filterWrapper: '.category-filter__wrapper--text .category_list',
+    categoryText: '.songs__categories__fill p',
   },
   player: {
     player: '.player',

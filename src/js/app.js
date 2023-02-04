@@ -175,12 +175,23 @@ const app = {
       });
 
     }
+
+    thisApp.initChangeText();
   },
 
-  initToUpperCase() {
-    const subscribeButton = document.querySelector(select.forms.toUpperCase);
+  initChangeText() {
+    const thisApp = this;
 
-    subscribeButton.textContent = subscribeButton.textContent.toUpperCase();
+    thisApp.joinNowButton = document.querySelector(select.forms.toUpperCase);
+    thisApp.categoryText = document.querySelectorAll(select.containerOf.categoryText);
+
+    thisApp.joinNowButton.textContent = thisApp.joinNowButton.textContent.toUpperCase();
+
+    for (let text of thisApp.categoryText) {
+      const splitText = text.innerHTML.split(',');
+      const joinedText = splitText.join(', ');
+      text.innerHTML = joinedText;
+    }
   },
 
   init: function () {
@@ -191,7 +202,6 @@ const app = {
     thisApp.initData();
     thisApp.initHome();
     thisApp.initSubscribe();
-    thisApp.initToUpperCase();
 
   },
 
