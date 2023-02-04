@@ -60,6 +60,21 @@ section {
   }
 }
 
+.songs__wrapper {
+  display: flex;
+  justify-content: center;
+
+  .categories-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
 .footer {
   padding: 10px 0;
   text-align: center;

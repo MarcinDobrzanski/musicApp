@@ -38,7 +38,6 @@ class Discover {
     }
 
     thisDiscover.mostPopularCategory = mostFrequentCategory;
-    console.log('thisDiscover.mostPopularCategory', thisDiscover.mostPopularCategory);
   }
 
   songArray() {
@@ -53,7 +52,6 @@ class Discover {
         thisDiscover.songsArray.push(song);
       }
     }
-    console.log('thisDiscover.songsArray', thisDiscover.songsArray);
   }
 
   randomNumber() {
@@ -69,7 +67,6 @@ class Discover {
     const randomDiscoverNumber = Math.floor(Math.random() * (max - min + 1) + min);
 
     thisDiscover.randomNumber = randomDiscoverNumber;
-    console.log('thisDiscover.randomNumber', thisDiscover.randomNumber);
   }
 
   suggestedSong() {
@@ -82,12 +79,10 @@ class Discover {
       rightSong = thisDiscover.songsArray[foundSong];
     }
     thisDiscover.rightSong = rightSong;
-    console.log('rightSong', rightSong);
 
     for (let song of thisDiscover.discoverSong) {
       song.classList.remove(classNames.pages.active);
       if (song == thisDiscover.rightSong) {
-        console.log('song5', song);
         song.classList.add(classNames.pages.active);
       }
     }
