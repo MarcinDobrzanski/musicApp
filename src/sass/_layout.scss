@@ -17,6 +17,17 @@ body {
       object-fit: cover;
     }
 
+    &--shadow {
+      width: 100vw;
+      height: 1297px;
+      position: absolute;
+      top: 82%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: linear-gradient(to top, $color-dark, transparent 50%);
+      z-index: 1;
+    }
+
     .hero--text {
       position: absolute;
       top: 50%;
