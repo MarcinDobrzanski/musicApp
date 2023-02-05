@@ -78,6 +78,7 @@ const app = {
         thisApp.initSongsPlayed();
         thisApp.initCategoryFilter();
         thisApp.initSearch();
+        thisApp.initChangeText();
       });
   },
 
@@ -175,17 +176,17 @@ const app = {
       });
 
     }
-
-    thisApp.initChangeText();
   },
 
   initChangeText() {
     const thisApp = this;
 
     thisApp.joinNowButton = document.querySelector(select.forms.toUpperCase);
+    thisApp.searchBtn = document.querySelector(select.forms.btnSearch);
     thisApp.categoryText = document.querySelectorAll(select.containerOf.categoryText);
 
     thisApp.joinNowButton.textContent = thisApp.joinNowButton.textContent.toUpperCase();
+    thisApp.searchBtn.value = thisApp.searchBtn.value.toUpperCase();
 
     for (let text of thisApp.categoryText) {
       const splitText = text.innerHTML.split(',');

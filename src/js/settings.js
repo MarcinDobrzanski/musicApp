@@ -46,6 +46,7 @@ export const select = {
     searchCategories: '#categories-select',
     selectDefault: 'default',
     toUpperCase: '#toUpperCase',
+    btnSearch: '#submit-search',
   },
   search: {
     qtySearch: '#qtySearchResult',
