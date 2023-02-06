@@ -13,18 +13,18 @@ body {
     img {
       position: relative;
       width: 100vw;
-      height: 1297px;
+      height: 1200px;
       object-fit: cover;
     }
 
     &--shadow {
       width: 100vw;
-      height: 1297px;
+      height: 1200px;
       position: absolute;
-      top: 82%;
+      top: 76%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-image: linear-gradient(to top, $color-dark, transparent 50%);
+      background-image: linear-gradient(to top, $color-dark, transparent 60%);
       z-index: 1;
     }
 
@@ -33,6 +33,7 @@ body {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      z-index: 2;
 
       &__title {
         letter-spacing: 2.5rem;
@@ -98,9 +99,7 @@ section {
 @media (max-width: 1200px) {
   .container {
     .hero__image {
-
       .hero--text {
-  
         &__title {
           font-size: 10em;
         }
@@ -112,12 +111,20 @@ section {
 @media (max-width: 725px) {
   .container {
     .hero__image {
-
       .hero--text {
-  
         &__title {
           font-size: 6em;
         }
+      }
+    }
+  }
+}
+
+@media (max-resolution: 180dpi) {
+  .container {
+    .hero__image {
+      .hero__image--shadow {
+        top: 48%;
       }
     }
   }
