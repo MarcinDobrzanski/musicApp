@@ -6,9 +6,7 @@ class Discover {
     const thisDiscover = this;
 
     thisDiscover.item = item;
-    console.log('thisDiscover.item', thisDiscover.item);
     thisDiscover.songs = songs;
-    console.log('thisDiscover.songs', thisDiscover.songs);
     thisDiscover.categoryPlayed = categories;
 
     thisDiscover.calculateMostPlayedCategory();
@@ -50,14 +48,11 @@ class Discover {
     thisDiscover.songsArray = [];
 
     for (let song of thisDiscover.songs) {
-      console.log('song', song);
       const songCategory = song.categories;
-      console.log('songCategory', songCategory);
       if (songCategory.indexOf(thisDiscover.mostPopularCategory) > -1) {
         thisDiscover.songsArray.push(song);
       }
     }
-    console.log('thisDiscover.songsArray', thisDiscover.songsArray);
   }
 
   randomNumber() {
@@ -80,14 +75,12 @@ class Discover {
 
     const foundSong = thisDiscover.randomNumber - 1;
     thisDiscover.rightSong = thisDiscover.songs[foundSong];
-    console.log('rightSong', thisDiscover.rightSong);
   }
 
   render() {
     const thisDiscover = this;
 
     const generatedHTML = templates.discoverPage(thisDiscover.rightSong);
-    console.log('generatedHTML', generatedHTML);
     thisDiscover.element = utils.createDOMFromHTML(generatedHTML);
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
 

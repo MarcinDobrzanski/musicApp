@@ -1,4 +1,4 @@
-import { templates, select, classNames } from '../settings.js';
+import { templates, select } from '../settings.js';
 import utils from '../utils.js';
 
 class Search {
@@ -13,7 +13,7 @@ class Search {
 
     thisSearch.render();
     thisSearch.getElements();
-    thisSearch.prepareCategory();
+    thisSearch.prepareInputSelectCategory();
     thisSearch.searchSong();
 
   }
@@ -33,7 +33,7 @@ class Search {
     thisSearch.dom.searchButton = document.querySelector(select.forms.input);
     thisSearch.dom.searchTerms = document.querySelector(select.forms.inputPlaceholder);
     thisSearch.dom.selectCategories = document.querySelector(select.forms.selectCategories);
-    thisSearch.dom.songsWrapper = document.querySelectorAll(select.containerOf.songSearchWrapper);
+    thisSearch.dom.songsWrapper = document.querySelector(select.containerOf.searchPageSongs);
     thisSearch.dom.qtySearch = document.querySelector(select.search.qtySearch);
 
   }
@@ -47,18 +47,32 @@ class Search {
       const selectedCategories = thisSearch.dom.selectCategories.value.toLowerCase();
       thisSearch.dom.searchResult.length = 0;
 
-      for (let song of thisSearch.dom.songsWrapper) {
-        const lowerCaseTittle = song.children[0].children[0].textContent.toLowerCase();
-        const songCategory = song.children[0].children[2].children[0].children[0].textContent.toLowerCase();
-        song.classList.remove(classNames.pages.active);
+      for (let song of thisSearch.data) {
+        const lowerCaseTittle = song.title.toLowerCase();
+        const songCategory = song.categories.map(category => category.toLowerCase());
         if (lowerCaseTittle.indexOf(searchPhrase) > -1 && selectedCategories == select.forms.selectDefault) {
-          song.classList.add(classNames.pages.active);
           thisSearch.dom.searchResult.push(song);
         } else if (lowerCaseTittle.indexOf(searchPhrase) > -1 && songCategory.indexOf(selectedCategories) > -1) {
-          song.classList.add(classNames.pages.active);
           thisSearch.dom.searchResult.push(song);
         }
+
       }
+
+      thisSearch.dom.songsWrapper.innerHTML = '';
+
+      for (let item of thisSearch.dom.searchResult) {
+        const generatedHTMLsong = templates.searchSongs(item);
+        thisSearch.dom.songsWrapper.innerHTML += generatedHTMLsong;
+      }
+
+
+      GreenAudioPlayer.init({
+        selector: select.player.playerSearch,
+        stopOthersOnPlay: true
+      });
+
+
+
       const categoriesLength = thisSearch.dom.searchResult.length;
       if (categoriesLength == 1) {
         thisSearch.dom.qtySearch.innerHTML = 'We have found ' + categoriesLength + ' song...';
@@ -69,7 +83,7 @@ class Search {
 
   }
 
-  prepareCategory() {
+  prepareInputSelectCategory() {
     const thisSearch = this;
 
     for (let song of thisSearch.data) {

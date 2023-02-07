@@ -46,7 +46,6 @@
     </section>
     <section id="search">
       <div id="search-box" class="search-wrapper container"></div>
-      <div class="searchPage-container container"></div>
     </section>
     <section id="discover">
       <div class="discover-wrapper container"></div>
@@ -138,6 +137,35 @@
       <div class="search-result-text">
         <p id="qtySearchResult"></p>
       </div>
+      <div class="searchPage-container"></div>
+    </div>
+  </script>
+
+  <script  id="template-search-song" type="text/x-handlebars-template">
+    <div class="songs__wrapper">
+      <div class="songs__wrapper--song">
+
+        <h2 class="songs__name">{{ title }}</h2>
+
+        <div class="player-search">
+          <audio id="player-song" src="songs/{{ filename }}" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="categories-wrapper">
+                                <!-- categories -->
+          <div class="songs__categories">
+            <div class="songs__categories__fill">
+              <p>Category: {{ categories }}</p>
+            </div>
+          </div>
+          <!-- ranking -->
+          <div class="songs__ranking">
+            <div class="songs__ranking__fill">
+              <p>#{{ ranking }} in the ranking</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </script>
 
@@ -146,21 +174,23 @@
       <div class="songs__wrapper--song">
 
         <h2 class="songs__name">{{ title }}</h2>
-  
+
         <div class="player-discover">
-          <audio src="songs/{{ filename }}" type="audio/mpeg">
+          <audio id="player-song" src="songs/{{ filename }}" type="audio/mpeg">
           </audio>
         </div>
-                  <!-- categories -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
+        <div class="categories-wrapper">
+                            <!-- categories -->
+          <div class="songs__categories">
+            <div class="songs__categories__fill">
             <p>Category: {{ categories }}</p>
+            </div>
           </div>
-        </div>
-        <!-- ranking -->
-        <div class="songs__ranking">
-          <div class="songs__ranking__fill">
+      <!-- ranking -->
+          <div class="songs__ranking">
+           <div class="songs__ranking__fill">
             <p>#{{ ranking }} in the ranking</p>
+            </div>
           </div>
         </div>
       </div>

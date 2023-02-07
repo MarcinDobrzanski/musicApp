@@ -86,16 +86,11 @@ const app = {
   initSong: function () {
     const thisApp = this;
 
-    const containers = [
-      document.querySelector(select.containerOf.mainPageSongs),
-      document.querySelector(select.containerOf.searchPageSongs),
-      // document.querySelector(select.containerOf.discoverPage)
-    ];
+    const container = document.querySelector(select.containerOf.mainPageSongs);
+
 
     for (let song of thisApp.data.songs) {
-      for (let container of containers) {
-        new Song(song, container);
-      }
+      new Song(song, container);
     }
   },
 
