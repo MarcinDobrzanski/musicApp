@@ -30,7 +30,7 @@ export const select = {
   player: {
     player: '.player',
     playerWrapper: '.songs__wrapper',
-    playerDiscover: '.playerDiscover',
+    playerDiscover: '.player-discover',
     audioPlayer: '.mainPage-container #player-song',
   },
   nav: {

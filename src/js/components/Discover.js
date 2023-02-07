@@ -1,21 +1,25 @@
-import { select, settings, classNames } from '../settings.js';
+import { select, settings, templates } from '../settings.js';
+import utils from '../utils.js';
 
 class Discover {
   constructor(item, songs, categories) {
     const thisDiscover = this;
 
     thisDiscover.item = item;
+    console.log('thisDiscover.item', thisDiscover.item);
     thisDiscover.songs = songs;
+    console.log('thisDiscover.songs', thisDiscover.songs);
     thisDiscover.categoryPlayed = categories;
 
-    thisDiscover.mostPlayedCategory();
-    thisDiscover.songArray();
+    thisDiscover.calculateMostPlayedCategory();
+    thisDiscover.getSongsWithPopularCategory();
     thisDiscover.randomNumber();
     thisDiscover.suggestedSong();
+    thisDiscover.render();
 
   }
 
-  mostPlayedCategory() {
+  calculateMostPlayedCategory() {
     const thisDiscover = this;
 
     const categories = thisDiscover.categoryPlayed;
@@ -40,18 +44,20 @@ class Discover {
     thisDiscover.mostPopularCategory = mostFrequentCategory;
   }
 
-  songArray() {
+  getSongsWithPopularCategory() {
     const thisDiscover = this;
 
     thisDiscover.songsArray = [];
 
-    thisDiscover.discoverSong = document.querySelectorAll(select.containerOf.discoverSongWrapper);
-    for (let song of thisDiscover.discoverSong) {
-      const songCategory = song.children[0].children[2].innerText;
+    for (let song of thisDiscover.songs) {
+      console.log('song', song);
+      const songCategory = song.categories;
+      console.log('songCategory', songCategory);
       if (songCategory.indexOf(thisDiscover.mostPopularCategory) > -1) {
         thisDiscover.songsArray.push(song);
       }
     }
+    console.log('thisDiscover.songsArray', thisDiscover.songsArray);
   }
 
   randomNumber() {
@@ -73,19 +79,22 @@ class Discover {
     const thisDiscover = this;
 
     const foundSong = thisDiscover.randomNumber - 1;
-    let rightSong = thisDiscover.songs[foundSong];
+    thisDiscover.rightSong = thisDiscover.songs[foundSong];
+    console.log('rightSong', thisDiscover.rightSong);
+  }
 
-    if (thisDiscover.songsArray.length > 0) {
-      rightSong = thisDiscover.songsArray[foundSong];
-    }
-    thisDiscover.rightSong = rightSong;
+  render() {
+    const thisDiscover = this;
 
-    for (let song of thisDiscover.discoverSong) {
-      song.classList.remove(classNames.pages.active);
-      if (song == thisDiscover.rightSong) {
-        song.classList.add(classNames.pages.active);
-      }
+    const generatedHTML = templates.discoverPage(thisDiscover.rightSong);
+    console.log('generatedHTML', generatedHTML);
+    thisDiscover.element = utils.createDOMFromHTML(generatedHTML);
+    const discoverContainer = document.querySelector(select.containerOf.discoverPage);
+
+    while (discoverContainer.firstChild) {
+      discoverContainer.removeChild(discoverContainer.firstChild);
     }
+    discoverContainer.appendChild(thisDiscover.element);
   }
 
 }

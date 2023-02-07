@@ -74,11 +74,12 @@ const app = {
         console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initSong();
-        thisApp.initPlayer();
+        thisApp.initPlayerMainPage();
         thisApp.initSongsPlayed();
         thisApp.initCategoryFilter();
         thisApp.initSearch();
         thisApp.initChangeText();
+        thisApp.initDiscover();
       });
   },
 
@@ -88,7 +89,7 @@ const app = {
     const containers = [
       document.querySelector(select.containerOf.mainPageSongs),
       document.querySelector(select.containerOf.searchPageSongs),
-      document.querySelector(select.containerOf.discoverPage)
+      // document.querySelector(select.containerOf.discoverPage)
     ];
 
     for (let song of thisApp.data.songs) {
@@ -130,6 +131,11 @@ const app = {
     const discoverContainer = document.querySelector(select.containerOf.discoverPage);
     thisApp.discover = new Discover(discoverContainer, thisApp.data.songs, thisApp.categoryPlayed);
 
+    GreenAudioPlayer.init({
+      selector: select.player.playerDiscover,
+      stopOthersOnPlay: true
+    });
+
   },
 
   initSubscribe: function () {
@@ -141,7 +147,7 @@ const app = {
 
   },
 
-  initPlayer: function () {
+  initPlayerMainPage: function () {
 
     GreenAudioPlayer.init({
       selector: select.player.player,
