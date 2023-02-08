@@ -1,20 +1,15 @@
 .category-filter__wrapper--text {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 
   p {
-    font-size: 30px;
-  }
-
-  ul {
     display: flex;
-    padding-left: 0;
+    flex-wrap: wrap;
     font-size: 30px;
 
-    li {
+    span {
       padding-left: 5px;
       cursor: pointer;
     }
@@ -139,46 +134,126 @@
   }
 }
 
-@media (max-width: 1200px) {
+
+@media (max-width: 380px) {
   .subscribe__image {
     .subscribe__header {
       h3 {
-        font-size: 2.5rem;
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
       }
     }
 
     .subscribe__button {
-      padding: 10px 40px;
-      border-radius: 5px;
-      font-size: 2rem;
-      top: 55%;
-      left: 45%;
-      transform: translate(-50%, -50%);
-    }
-  }
-}
-@media (max-width: 725px) {
-  .subscribe__image {
-    .subscribe__header {
-      h3 {
-        font-size: 2rem;
-      }
-    }
-
-    .subscribe__button {
-      font-size: 1rem;
+      font-size: 0.5rem;
+      padding: 10px 20px;
+      top: 30%;
+      left: 25%;
     }
 
     .subscribe__second-text {
       text-align: center;
+      letter-spacing: 0.2rem;
+      text-align: center;
+      top: 83%;
       left: 50%;
 
       p:first-child  {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
   
       p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+    img {
+      top: 38%;
+      left: 75%;
+    }
+  
+    &__text {
+      p {
+        position: absolute;
+        top: 45%;
+        left: 61%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: $font-black;
+        letter-spacing: .4rem;
+      }
+  
+      p:first-child {
+        top: 33%;
+        left: 52%;
+      }
+  
+      span {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+@media (min-width: 380px) and (max-width: 420px) {
+  .subscribe__image {
+    .subscribe__header {
+      h3 {
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+      }
+    }
+
+    .subscribe__button {
+      font-size: 0.5rem;
+      padding: 10px 20px;
+      top: 30%;
+      left: 25%;
+    }
+
+    .subscribe__second-text {
+      text-align: center;
+      letter-spacing: 0.2rem;
+      text-align: center;
+      top: 83%;
+      left: 50%;
+
+      p:first-child  {
         font-size: 0.8rem;
+      }
+  
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+    img {
+      top: 38%;
+      left: 75%;
+    }
+  
+    &__text {
+      p {
+        position: absolute;
+        top: 45%;
+        left: 61%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: $font-black;
+        letter-spacing: .4rem;
+      }
+  
+      p:first-child {
+        top: 33%;
+        left: 52%;
+      }
+  
+      span {
+        color: $color-main;
       }
     }
   }

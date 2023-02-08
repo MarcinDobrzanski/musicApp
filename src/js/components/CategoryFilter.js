@@ -31,11 +31,12 @@ class CategoryFilter {
       for (let item of song.categories) {
         if (!thisCategoryFilter.namesCategory.includes(item)) {
           thisCategoryFilter.namesCategory.push(item);
+          
         }
       }
     }
 
-    const categoryFilterHTML = '<li>' + thisCategoryFilter.namesCategory.join('</li>'+','+'<li>') + '</li>';
+    const categoryFilterHTML ='Category:' + '<span>' + thisCategoryFilter.namesCategory.join('</span>'+','+'<span>') + '</span>';
     const categoryFilterWrapper = document.querySelector(select.containerOf.filterWrapper);
     categoryFilterWrapper.innerHTML = categoryFilterHTML;
 
