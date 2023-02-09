@@ -152,7 +152,6 @@
     }
 
     .subscribe__second-text {
-      text-align: center;
       letter-spacing: 0.2rem;
       text-align: center;
       top: 83%;
@@ -214,7 +213,6 @@
     }
 
     .subscribe__second-text {
-      text-align: center;
       letter-spacing: 0.2rem;
       text-align: center;
       top: 83%;
@@ -250,6 +248,67 @@
       p:first-child {
         top: 33%;
         left: 52%;
+      }
+  
+      span {
+        color: $color-main;
+      }
+    }
+  }
+}
+
+@media (min-width: 420px) and (max-width: 920px) {
+  .subscribe__image {
+    .subscribe__header {
+      h3 {
+        font-size: 2.5rem;
+        letter-spacing: 0.3rem;
+      }
+    }
+
+    .subscribe__button {
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      top: 30%;
+      left: 25%;
+    }
+
+    .subscribe__second-text {
+      letter-spacing: 0.2rem;
+      text-align: right;
+      top: 87%;
+      left: 60%;
+
+      p:first-child  {
+        font-size: 1rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+    img {
+      top: 38%;
+      left: 75%;
+    }
+  
+    &__text {
+      p {
+        position: absolute;
+        top: 45%;
+        left: 62%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: $font-black;
+        letter-spacing: .4rem;
+      }
+  
+      p:first-child {
+        top: 33%;
+        left: 57%;
       }
   
       span {

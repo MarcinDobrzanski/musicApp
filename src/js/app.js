@@ -78,8 +78,8 @@ const app = {
         thisApp.initSongsPlayed();
         thisApp.initCategoryFilter();
         thisApp.initSearch();
-        thisApp.initChangeText();
         thisApp.initDiscover();
+        thisApp.initChangeText();
       });
   },
 
