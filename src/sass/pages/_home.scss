@@ -136,21 +136,18 @@
 
 @media (max-width: 1024px) {
   .subscribe__image {
-
-  
     .subscribe__header {
-
       h3 {
         font-size: 3.2rem;
       }
     }
-  
+
     .subscribe__button {
       padding: 10px 40px;
       font-size: 1.5rem;
       left: 23%;
     }
-  
+
     .subscribe__second-text {
       top: 80%;
     }
@@ -159,32 +156,29 @@
 
 @media (max-width: 912px) {
   .subscribe__image {
-  
     .subscribe__header {
-  
       h3 {
         font-size: 2.8rem;
       }
     }
-  
+
     .subscribe__button {
       padding: 10px 20px;
       font-size: 1.8rem;
       left: 23%;
     }
-  
+
     .subscribe__second-text {
       left: 65%;
     }
   }
 
   .subscribe--second-image {
-  
     &__text {
       p {
         left: 56%;
       }
-  
+
       p:first-child {
         left: 48%;
       }
@@ -194,20 +188,18 @@
 
 @media (max-width: 820px) {
   .subscribe__image {
-  
     .subscribe__header {
-  
       h3 {
         font-size: 2.2rem;
       }
     }
-  
+
     .subscribe__button {
       padding: 10px 20px;
       font-size: 1.2rem;
       left: 20%;
     }
-  
+
     .subscribe__second-text {
       left: 60%;
       top: 86%;
@@ -215,13 +207,12 @@
   }
 
   .subscribe--second-image {
-  
     &__text {
       p {
         left: 56%;
         font-size: 3.2rem;
       }
-  
+
       p:first-child {
         left: 48%;
       }
@@ -229,39 +220,59 @@
   }
 }
 
-// @media (max-width: 768px) {
-//   .subscribe__image {
-  
-//     .subscribe__header {
-  
-//       h3 {
-//         font-size: 2.2rem;
-//       }
-//     }
-  
-//     .subscribe__button {
-//       padding: 10px 20px;
-//       font-size: 1.2rem;
-//       left: 20%;
-//     }
-  
-//     .subscribe__second-text {
-//       left: 60%;
-//       top: 86%;
-//     }
-//   }
+@media (max-width: 540px) {
+  .category-filter__wrapper--text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
-//   .subscribe--second-image {
-  
-//     &__text {
-//       p {
-//         left: 56%;
-//         font-size: 3.2rem;
-//       }
-  
-//       p:first-child {
-//         left: 48%;
-//       }
-//     }
-//   }
-// }
+    p {
+      padding: 0 6px;
+    }
+  }
+
+  .subscribe__image {
+    .subscribe__header {
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .subscribe__button {
+      padding: 10px 20px;
+      font-size: .8rem;
+      left: 18%;
+    }
+
+    .subscribe__second-text {
+      left: 40%;
+      top: 86%;
+
+      
+    p:first-child {
+      font-size: 1rem;
+    }
+
+    p {
+      width: 520px;
+      font-size: .9rem;
+      letter-spacing: 0.2rem;
+    }
+    }
+  }
+
+  .subscribe--second-image {
+    &__text {
+      p {
+        top: 45%;
+        left: 57%;
+        font-size: 2rem;
+      }
+
+      p:first-child {
+        top: 37%;
+      }
+    }
+  }
+}
