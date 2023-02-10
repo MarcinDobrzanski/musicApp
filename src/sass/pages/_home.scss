@@ -241,7 +241,7 @@
 
     .subscribe__button {
       padding: 10px 20px;
-      font-size: .8rem;
+      font-size: 0.8rem;
       left: 18%;
     }
 
@@ -249,16 +249,15 @@
       left: 40%;
       top: 86%;
 
-      
-    p:first-child {
-      font-size: 1rem;
-    }
+      p:first-child {
+        font-size: 1rem;
+      }
 
-    p {
-      width: 520px;
-      font-size: .9rem;
-      letter-spacing: 0.2rem;
-    }
+      p {
+        width: 520px;
+        font-size: 0.9rem;
+        letter-spacing: 0.2rem;
+      }
     }
   }
 
@@ -272,6 +271,130 @@
 
       p:first-child {
         top: 37%;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .subscribe__image {
+    .subscribe__header {
+      h3 {
+        font-size: 1rem;
+        letter-spacing: 0.3rem;
+      }
+    }
+
+    .subscribe__button {
+      padding: 10px 20px;
+      font-size: 0.6rem;
+      top: 38%;
+      left: 18%;
+    }
+
+    .subscribe__second-text {
+      left: 30%;
+      top: 86%;
+
+      p:first-child {
+        font-size: 0.8rem;
+      }
+
+      p {
+        width: 520px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+    &__text {
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .category-filter__wrapper--text {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  .subscribe__image {
+    .subscribe__button {
+      top: 35%;
+    }
+
+    .subscribe__second-text {
+      left: 25%;
+      top: 86%;
+
+      p:first-child {
+        font-size: 0.8rem;
+      }
+
+      p {
+        width: 520px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+    &__text {
+      p {
+        font-size: 1.5rem;
+        left: 57%;
+        letter-spacing: 0.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .category-filter__wrapper--text {
+    p {
+      font-size: 1.3rem;
+    }
+  }
+
+  .subscribe__image {
+    .subscribe__header {
+      h3 {
+        font-size: 1rem;
+        letter-spacing: .1rem;
+      }
+    }
+
+    .subscribe__button {
+      top: 40%;
+      left: 50%;
+    }
+
+    .subscribe__second-text {
+      display: none;
+
+      p:first-child {
+        display: none;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
+
+  .subscribe--second-image {
+
+    img {
+      display: none;
+    }
+    &__text {
+      p {
+        display: none;
       }
     }
   }

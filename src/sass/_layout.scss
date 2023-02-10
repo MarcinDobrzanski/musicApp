@@ -145,6 +145,7 @@ section {
     }
   }
 }
+
 @media (max-width: 540px) {
   .container {
     .hero__image {
@@ -155,12 +156,12 @@ section {
       .hero--text {
         top: 50%;
         left: 50%;
-  
+
         &__title {
           font-size: 5rem;
           letter-spacing: 2rem;
         }
-  
+
         &__subtitle {
           font-size: 2rem;
           margin: 0 0 40px 0;
@@ -169,9 +170,152 @@ section {
     }
 
     .main-nav {
-    
       a {
-        padding: 0 25px;
+        padding: 0 20px;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .container {
+    .hero__image {
+      img {
+        height: 1000px;
+      }
+
+      &--shadow {
+        height: 1000px;
+        top: 57%;
+      }
+    }
+  }
+
+  .green-audio-player {
+    width: 340px;
+  }
+
+  .songs__wrapper {
+    .categories-wrapper {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 394px) {
+  .container {
+    .hero__image {
+      &--shadow {
+        top: 60%;
+      }
+    }
+
+    .main-nav {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      a {
+        padding: 0 20px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    .hero__image {
+      &--shadow {
+        top: 75%;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    .hero__image {
+      img {
+        height: 1000px;
+      }
+
+      &--shadow {
+        height: 1000px;
+        top: 68%;
+      }
+
+      .hero--text {
+        top: 50%;
+        left: 50%;
+
+        &__title {
+          font-size: 4rem;
+          letter-spacing: 2rem;
+        }
+
+        &__subtitle {
+          font-size: 2rem;
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+  }
+
+  .green-audio-player {
+    width: 320px;
+  }
+
+  .songs__wrapper {
+    .categories-wrapper {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .container {
+    .hero__image {
+      &--shadow {
+        height: 1000px;
+        top: 77%;
+      }
+
+      .hero--text {
+        top: 50%;
+        left: 50%;
+
+        &__title {
+          font-size: 2rem;
+          letter-spacing: 2rem;
+        }
+
+        &__subtitle {
+          font-size: 1rem;
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+  }
+
+  .green-audio-player {
+    width: 250px;
+    min-width: 200px;
+  }
+
+  .songs__wrapper {
+    .songs__name {
+      font-size: 1.5rem;
+    }
+
+    .categories-wrapper {
+      p {
+        font-size: 0.7rem;
       }
     }
   }
