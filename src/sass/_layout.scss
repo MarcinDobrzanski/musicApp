@@ -10,8 +10,8 @@ body {
 
 .container {
   .hero__image {
+    position: relative;
     img {
-      position: relative;
       width: 100vw;
       height: 1200px;
       object-fit: cover;
@@ -21,7 +21,7 @@ body {
       width: 100vw;
       height: 1200px;
       position: absolute;
-      top: 76%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       background-image: linear-gradient(to top, $color-dark, transparent 60%);
@@ -96,63 +96,9 @@ section {
   text-align: center;
 }
 
-@media (max-width: 1280px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 75%;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 100%;
-      }
-    }
-  }
-}
-
-@media (max-width: 912px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 44%;
-      }
-    }
-  }
-}
-
-@media (max-width: 820px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 53%;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 60%;
-      }
-    }
-  }
-}
-
 @media (max-width: 540px) {
   .container {
     .hero__image {
-      &--shadow {
-        top: 85%;
-      }
-
       .hero--text {
         top: 50%;
         left: 50%;
@@ -187,7 +133,6 @@ section {
 
       &--shadow {
         height: 1000px;
-        top: 57%;
       }
     }
   }
@@ -207,12 +152,6 @@ section {
 
 @media (max-width: 394px) {
   .container {
-    .hero__image {
-      &--shadow {
-        top: 60%;
-      }
-    }
-
     .main-nav {
       display: flex;
       flex-direction: column;
@@ -221,16 +160,6 @@ section {
       a {
         padding: 0 20px;
         font-size: 1.5rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 376px) {
-  .container {
-    .hero__image {
-      &--shadow {
-        top: 75%;
       }
     }
   }
@@ -245,7 +174,6 @@ section {
 
       &--shadow {
         height: 1000px;
-        top: 68%;
       }
 
       .hero--text {
@@ -281,11 +209,6 @@ section {
 @media (max-width: 280px) {
   .container {
     .hero__image {
-      &--shadow {
-        height: 1000px;
-        top: 77%;
-      }
-
       .hero--text {
         top: 50%;
         left: 50%;

@@ -66,12 +66,14 @@
 @media (max-width: 768px) {
   .search__wrapper--search {
     text-align: center;
+
     .search-form {
       input,
       select {
         margin: auto;
         font-size: 1.5rem;
       }
+
       select#categories-select {
         width: 200px;
       }
