@@ -38,6 +38,11 @@ export const select = {
     links: '.main-nav a',
     navWrapper: '.main-nav',
   },
+  songs: {
+    idSong: 'data-idSong',
+    songsCategories: 'data-categories',
+    songCategory: '.songs__categories__fill p',
+  },
   forms: {
     inputPlaceholder: '#search-song',
     selectCategories: '#categories-select',

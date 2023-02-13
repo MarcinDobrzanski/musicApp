@@ -59,7 +59,7 @@ class CategoryFilter {
       }
 
       for (let song of thisCategoryFilter.songWrapper) {
-        const includesCategorySong = song.children[0].children[2].children[0].children[0].textContent;
+        const includesCategorySong = song.querySelector(select.songs.songCategory).textContent;
         if (!includesCategorySong.includes(event.target.textContent) && song.classList.contains(classNames.pages.hide)) {
           song.classList.remove(classNames.pages.hide);
         } else if (!includesCategorySong.includes(event.target.textContent) && !song.classList.contains(classNames.pages.hide)) {

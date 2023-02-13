@@ -154,24 +154,13 @@ const app = {
     const thisApp = this;
 
     thisApp.categoryPlayed = [];
-    thisApp.playedSongsId = [];
 
     const listenSongs = document.querySelectorAll(select.player.audioPlayer);
-    const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
     for (let song of listenSongs) {
       song.addEventListener('play', function () {
-        const idSong = song.attributes[2].value;
-        thisApp.playedSongsId.push(idSong);
-
-        for (let item of songsWrapper) {
-          const idItemSong = item.children[1].children[4].attributes[2].value;
-
-          if (idItemSong == idSong) {
-            const itemCategories = item.children[2].children[0].innerText;
-            const categories = itemCategories.split(':')[1].split(',');
-            thisApp.categoryPlayed = thisApp.categoryPlayed.concat(categories);
-          }
-        }
+        const songCategory = song.getAttribute(select.songs.songsCategories);
+        const categories = songCategory.split(',');
+        thisApp.categoryPlayed = thisApp.categoryPlayed.concat(categories);
       });
 
     }
