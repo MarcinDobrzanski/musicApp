@@ -75,6 +75,12 @@ class Discover {
 
     const foundSong = thisDiscover.randomNumber - 1;
     thisDiscover.rightSong = thisDiscover.songs[foundSong];
+
+    if (thisDiscover.songsArray.length === 0 ) {
+      thisDiscover.rightSong = thisDiscover.songs[foundSong];
+    } else {
+      thisDiscover.rightSong = thisDiscover.songsArray[foundSong];
+    }
   }
 
   render() {

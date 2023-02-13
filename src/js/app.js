@@ -71,7 +71,6 @@ const app = {
         return rawResponse.json();
       })
       .then((parsedResponse) => {
-        console.log('parsedResponse', parsedResponse);
         thisApp.data.songs = parsedResponse;
         thisApp.initSong();
         thisApp.initPlayerMainPage();
@@ -154,22 +153,21 @@ const app = {
   initSongsPlayed: function () {
     const thisApp = this;
 
-    thisApp.songsPlayed = [];
     thisApp.categoryPlayed = [];
+    thisApp.playedSongsId = [];
 
     const listenSongs = document.querySelectorAll(select.player.audioPlayer);
     const songsWrapper = document.querySelectorAll(select.containerOf.songsWrapperMainPage);
     for (let song of listenSongs) {
       song.addEventListener('play', function () {
-        const pathSrcFile = song.getAttribute('src');
-        const fileName = pathSrcFile.split('/').pop();
-        thisApp.songsPlayed.push(fileName);
+        const idSong = song.attributes[2].value;
+        thisApp.playedSongsId.push(idSong);
 
         for (let item of songsWrapper) {
-          const pathToSong = item.children[1].children['player-song'].src;
-          const songName = pathToSong.split('/').pop();
-          if (fileName == songName) {
-            const itemCategories = item.children[2].innerText;
+          const idItemSong = item.children[1].children[4].attributes[2].value;
+
+          if (idItemSong == idSong) {
+            const itemCategories = item.children[2].children[0].innerText;
             const categories = itemCategories.split(':')[1].split(',');
             thisApp.categoryPlayed = thisApp.categoryPlayed.concat(categories);
           }
