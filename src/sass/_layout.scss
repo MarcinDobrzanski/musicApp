@@ -99,6 +99,24 @@ section {
 
 @media (max-width: 695px) {
   .container {
+    .hero__image {
+  
+      .hero--text {
+        &__title {
+          font-size: 7rem;
+        }
+  
+        &__subtitle {
+          font-size: 2.5rem;
+          margin: 0 0 40px 0;
+          font-weight: $font-header;
+          color: $color-light;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+    }
+
     .main-nav {
       a {
         padding: 0 20px;
